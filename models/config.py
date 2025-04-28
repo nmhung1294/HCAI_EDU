@@ -1,4 +1,6 @@
-
+from dotenv import load_dotenv
+from llama_index.llms.google_genai import GoogleGenAI
+import os
 
 def read_prompt_file(file_path):
     try:
@@ -18,5 +20,13 @@ def save_prompt(file_path, content):
     except Exception as e:
         print(f"Error saving the prompt: {e}")
 
-DEFUALT_DIRECT_LLM_PROMPT = read_prompt_file("./prompts/default/DEFUALT_DIRECT_LLM_PROMPT.txt")
-DEFAULT_LLM_QUERY_TOOL_DESCRIPTION = read_prompt_file("./prompts/default/DEFAULT_LLM_QUERY_TOOL_DESCRIPTION.txt")
+load_dotenv()
+google_api_key = os.getenv("GOOGLE_API_KEY")
+llm = GoogleGenAI(model="models/gemini-2.0-flash", google_api_key=google_api_key)
+DEFUALT_DIRECT_LLM_PROMPT = read_prompt_file("../prompts/default/DEFUALT_DIRECT_LLM_PROMPT.txt")
+DEFAULT_LLM_QUERY_TOOL_DESCRIPTION = read_prompt_file("../prompts/default/DEFAULT_LLM_QUERY_TOOL_DESCRIPTION.txt")
+DEFUALT_SQL_RAG_QUERY_TOOL_DESCRIPTION = read_prompt_file("../prompts/default/DEFAULT_SQL_RAG_QUERY_TOOL_DESCRIPTION.txt")
+
+
+
+

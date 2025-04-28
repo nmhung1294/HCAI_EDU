@@ -1,3 +1,6 @@
 .env
 __pycache__/
 models/__pycache__/
+conda_env/
+.idea/
+etc/
