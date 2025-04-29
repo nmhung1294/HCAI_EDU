@@ -21,7 +21,7 @@ sql_prompt = get_sql_template(schemas_str)
 sql_query_engine = SQLQueryEngine(prompt=sql_prompt, llm=llm)
 
 #RAPTOR
-velociraptor = get_raptor(files=get_files())
+velociraptor = get_raptor(files=get_files(), force_rebuild=False)
 raptor_query_engine = velociraptor.query_engine
 
 #LLM tool
@@ -58,11 +58,11 @@ router_query_engine = RouterQueryEngine(
 
 def get_chatbot_response(user_prompt: str) -> str:
     """Generate a chatbot response based on the conversation context."""
-    # response = None
-    # with ThreadPoolExecutor(max_workers=3) as executor:
-    #     future = executor.submit(worker, user_prompt)
-    #     response = future.result()
-
+    # raptor_nodes = velociraptor.retriever.retrieve(user_prompt)
+    # print("Retrieved Nodes from RaptorRetriever:")
+    # for node in raptor_nodes:
+    #     print(node.text)
+    # return None
     response = router_query_engine.query(user_prompt)
 
     intent = response.metadata["selector_result"].selections[0]

@@ -3,7 +3,7 @@ import time
 from llama_index.vector_stores.chroma import ChromaVectorStore
 from llama_index.core import SimpleDirectoryReader
 from llama_index.packs.raptor import RaptorPack
-from llama_index.packs.raptor import RaptorRetriever as RaptorRetriever
+from llama_index.packs.raptor import RaptorRetriever
 # from models.custom_raptor_retriever import CustomRaptorRetriever as RaptorRetriever
 from llama_index.embeddings.cohere import CohereEmbedding
 from llama_index.core.query_engine import RetrieverQueryEngine
