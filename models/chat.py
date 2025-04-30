@@ -5,7 +5,8 @@ from llama_index.core.query_engine import RouterQueryEngine
 from models.sqlrag_query import SQLQueryEngine, get_sql_template,get_create_table_statement, get_tables
 from models.llm_query import LlmQueryEngine
 from models.config import *
-from models.raptor import get_raptor, get_files
+from models.raptor_query import get_raptor, get_files
+from models.web_scraper_query import WebScraperQueryEngine
 
 import asyncio
 import inspect# Create query engine
@@ -45,9 +46,22 @@ raptor_tool = QueryEngineTool.from_defaults(
     description=DEFAULT_RAPTOR_QUERY_TOOL_DESCRIPTION
 )
 
+#Web scraper tool
+web_scraper_engine = WebScraperQueryEngine(llm=llm)
+web_scraper_tool = QueryEngineTool.from_defaults(
+    query_engine=web_scraper_engine,
+    name="web_scraper_tool",
+    description=DEFAULT_WEB_SCRAPER_QUERY_TOOL_DESCRIPTION
+)
+
+
+
 router_query_engine = RouterQueryEngine(
     selector=LLMSingleSelector.from_defaults(llm=llm),
-    query_engine_tools=[llm_tool, sql_rag_tool, raptor_tool],
+    query_engine_tools=[llm_tool,
+                        sql_rag_tool,
+                        raptor_tool,
+                        web_scraper_tool],
     llm=llm
 )
 
@@ -102,4 +116,19 @@ def get_chatbot_response(user_prompt: str) -> str:
             """
         )
         return str(tailored_response)
+    elif intent.index == 3:
+        print("WEB SCRAPER INTENT")
+        print(response)
+        tailored_response = llm.complete(
+            f"***Instructions for answering the user query:***\n"
+            f"Always make sure to answer in Vietnamese language.\n"
+            f"Your task is to present the user with the latest news from the website. Here are the news:\n"
+            f""""
+                <NEWS START>
+                {response}
+                <NEWS END>
+            """
+        )
+        return str(tailored_response)
+
     return str(response)
