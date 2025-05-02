@@ -1,4 +1,7 @@
 llama-index==0.12.33
 llama-index-llms-google-genai==0.1.8
+llama-index-vector-stores-chroma==0.4.1
+llama-index-packs-raptor==0.3.1
+llama-index-embeddings-cohere==0.4.0
 uvicorn
 fastapi

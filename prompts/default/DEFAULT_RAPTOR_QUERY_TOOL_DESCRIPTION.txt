@@ -1,7 +1,5 @@
-Useful for retrieving specific context about the faculty, syllabus, and course information such as:
-- syllabus informations (how to access exam, what to expect from class, who is the professor, etc.)
-- course informations (course schedule, course materials, etc.)
-- programming knowledge (programming languages, tools, paradigms, functions, concepts etc.)
-- specific questions about programming (how to debug, how to write a program, etc.)
-- faculty information (faculty's office hours, faculty's contact information, etc.)
+Useful for retrieving specific context about learning English with Vietnamese as the mother tongue such as:
+- syllabus information (how to access IELTS practice exams, what to expect from an English class, etc.)
+- language learning knowledge (English grammar rules, vocabulary building strategies, pronunciation techniques, reading comprehension tips, etc.)
+- specific questions about English learning (how to improve IELTS Writing Task 2, how to practice Speaking skills effectively, how to memorize English vocabulary, etc.)
 Query: {query}
