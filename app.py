@@ -34,3 +34,5 @@ async def chat_with_bot(request: ChatRequest):
 
     # If both attempts failed
     raise HTTPException(status_code=500, detail=f"Bot failed to respond: {str(last_exception)}")
+
+# @app.post("/upload", )
