@@ -23,7 +23,6 @@ import {
     Button,
     ListItemButton,
     TextField,
-    Badge,
     Avatar,
     Skeleton
 } from '@mui/material';
@@ -87,16 +86,84 @@ const SaveChatDialog = ({ open, onClose, onSave }) => {
  */
 const DeleteChatDialog = ({ open, onClose, onConfirm }) => {
     return (
-        <Dialog open={open} onClose={onClose} maxWidth="sm">
-            <DialogTitle>Xác nhận xóa</DialogTitle>
-            <DialogContent>
-                <Typography>
-                    Bạn có chắc chắn muốn xóa cuộc trò chuyện này không? Hành động này không thể hoàn tác.
+        <Dialog
+            open={open}
+            onClose={onClose}
+            maxWidth="sm"
+            PaperProps={{
+                sx: {
+                    bgcolor: 'background.darkLight',
+                    borderRadius: 3,
+                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.32)',
+                    border: '1px solid',
+                    borderColor: 'divider',
+                }
+            }}
+        >
+            <DialogTitle sx={{
+                color: 'text.light',
+                fontSize: '1.25rem',
+                fontWeight: 600,
+                pt: 3,
+                px: 3
+            }}>
+                Xác nhận xóa
+            </DialogTitle>
+            <DialogContent sx={{ px: 3 }}>
+                <Typography
+                    variant="body1"
+                    sx={{
+                        color: 'text.secondary',
+                        lineHeight: 1.6,
+                        fontSize: '0.95rem'
+                    }}
+                >
+                    Bạn có chắc chắn muốn xóa cuộc trò chuyện này không?
+                </Typography>
+                <Typography
+                    variant="body2"
+                    sx={{
+                        color: 'text.secondary',
+                        mt: 1.5,
+                        fontSize: '0.875rem',
+                        opacity: 0.8
+                    }}
+                >
+                    Hành động này không thể hoàn tác.
                 </Typography>
             </DialogContent>
-            <DialogActions>
-                <Button onClick={onClose}>Hủy</Button>
-                <Button onClick={onConfirm} variant="contained" color="error">
+            <DialogActions sx={{ px: 3, pb: 3, gap: 1 }}>
+                <Button
+                    onClick={onClose}
+                    variant="outlined"
+                    sx={{
+                        borderColor: 'divider',
+                        color: 'text.secondary',
+                        px: 3,
+                        '&:hover': {
+                            borderColor: 'primary.main',
+                            bgcolor: 'rgba(14, 165, 233, 0.04)'
+                        }
+                    }}
+                >
+                    Hủy
+                </Button>
+                <Button
+                    onClick={onConfirm}
+                    variant="contained"
+                    color="error"
+                    sx={{
+                        px: 3,
+                        bgcolor: 'error.main',
+                        '&:hover': {
+                            bgcolor: 'error.dark',
+                        },
+                        boxShadow: 'none',
+                        '&:hover': {
+                            boxShadow: '0 4px 12px rgba(239, 68, 68, 0.25)',
+                        }
+                    }}
+                >
                     Xóa
                 </Button>
             </DialogActions>
@@ -256,6 +323,7 @@ const ChatContainer = () => {
     const handleDeleteChat = async () => {
         if (chatToDelete) {
             await deleteChat(chatToDelete);
+            clearMessages();
             if (selectedChat === chatToDelete) {
                 setSelectedChat(null);
             }
@@ -784,4 +852,4 @@ const ChatContainer = () => {
     );
 };
 
-export default ChatContainer; 
+export default ChatContainer;

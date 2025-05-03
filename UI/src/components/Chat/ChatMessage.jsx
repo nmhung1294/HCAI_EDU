@@ -249,8 +249,13 @@ const ChatMessage = ({ message }) => {
                                                 {...props}
                                             />
                                         ),
-                                        code: ({ node, inline, ...props }) => (
-                                            inline ?
+                                        code: ({ node, inline, className, children, ...props }) => {
+                                            // Lấy ngôn ngữ từ className (ví dụ: language-javascript -> javascript)
+                                            const match = /language-(\w+)/.exec(className || '');
+                                            const lang = match ? match[1] : '';
+
+                                            return inline ? (
+                                                // Inline code
                                                 <Box
                                                     component="code"
                                                     sx={{
@@ -262,51 +267,96 @@ const ChatMessage = ({ message }) => {
                                                         color: theme.palette.primary.light,
                                                     }}
                                                     {...props}
-                                                /> :
+                                                >
+                                                    {children}
+                                                </Box>
+                                            ) : (
+                                                // Code block
                                                 <Box
-                                                    component="pre"
                                                     sx={{
-                                                        backgroundColor: 'rgba(0, 0, 0, 0.25)',
-                                                        borderRadius: '8px',
-                                                        padding: '1rem',
-                                                        overflow: 'auto',
-                                                        fontFamily: '"Roboto Mono", monospace',
-                                                        fontSize: { xs: '0.8rem', sm: '0.85rem', md: '0.9rem' },
-                                                        marginY: '1rem',
                                                         position: 'relative',
-                                                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                                                        '&::-webkit-scrollbar': {
-                                                            height: '8px',
-                                                        },
-                                                        '&::-webkit-scrollbar-track': {
-                                                            backgroundColor: 'rgba(0, 0, 0, 0.1)',
-                                                            borderRadius: '4px'
-                                                        },
-                                                        '&::-webkit-scrollbar-thumb': {
-                                                            backgroundColor: 'rgba(255, 255, 255, 0.15)',
-                                                            borderRadius: '4px',
-                                                            '&:hover': {
-                                                                backgroundColor: 'rgba(255, 255, 255, 0.25)'
-                                                            }
-                                                        },
-                                                        '&::before': {
-                                                            content: '"Code"',
+                                                        mt: 2,
+                                                        mb: 3
+                                                    }}
+                                                >
+                                                    {/* Language label */}
+                                                    <Box
+                                                        sx={{
                                                             position: 'absolute',
-                                                            top: -10,
-                                                            right: 10,
+                                                            top: -12,
+                                                            right: 12,
                                                             backgroundColor: theme.palette.primary.dark,
                                                             color: '#fff',
                                                             fontSize: '0.7rem',
-                                                            padding: '2px 8px',
+                                                            py: 0.5,
+                                                            px: 1.5,
                                                             borderRadius: '4px',
                                                             fontFamily: theme.typography.fontFamily,
                                                             fontWeight: 500,
-                                                            opacity: 0.8
-                                                        }
-                                                    }}
-                                                    {...props}
-                                                />
-                                        ),
+                                                            opacity: 0.9,
+                                                            zIndex: 1,
+                                                        }}
+                                                    >
+                                                        {lang || 'code'}
+                                                    </Box>
+                                                    {/* Code content */}
+                                                    <Box
+                                                        component="pre"
+                                                        className={className}  // Important: Keep the className for syntax highlighting
+                                                        sx={{
+                                                            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                                                            borderRadius: '8px',
+                                                            padding: '1.5rem 1rem',
+                                                            overflow: 'auto',
+                                                            fontFamily: '"Roboto Mono", monospace',
+                                                            fontSize: { xs: '0.8rem', sm: '0.85rem', md: '0.9rem' },
+                                                            lineHeight: 1.5,
+                                                            border: '1px solid rgba(255, 255, 255, 0.1)',
+                                                            color: 'text.light', // Add this to ensure text is visible
+                                                            '& code': {
+                                                                fontFamily: 'inherit',
+                                                                fontSize: 'inherit',
+                                                            },
+                                                            // Highlight colors for different code elements
+                                                            '& .token.comment': {
+                                                                color: '#6b7280',
+                                                            },
+                                                            '& .token.string': {
+                                                                color: '#22c55e',
+                                                            },
+                                                            '& .token.number': {
+                                                                color: '#3b82f6',
+                                                            },
+                                                            '& .token.keyword': {
+                                                                color: '#ec4899',
+                                                            },
+                                                            '& .token.function': {
+                                                                color: '#f59e0b',
+                                                            },
+                                                            // Scrollbar styling
+                                                            '&::-webkit-scrollbar': {
+                                                                height: '8px',
+                                                                width: '8px',
+                                                            },
+                                                            '&::-webkit-scrollbar-track': {
+                                                                backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                                                                borderRadius: '4px'
+                                                            },
+                                                            '&::-webkit-scrollbar-thumb': {
+                                                                backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                                                                borderRadius: '4px',
+                                                                '&:hover': {
+                                                                    backgroundColor: 'rgba(255, 255, 255, 0.25)'
+                                                                }
+                                                            },
+                                                        }}
+                                                        {...props}
+                                                    >
+                                                        {children}
+                                                    </Box>
+                                                </Box>
+                                            );
+                                        },
                                         blockquote: ({ node, ...props }) => (
                                             <Box
                                                 component="blockquote"
