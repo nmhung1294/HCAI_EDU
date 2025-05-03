@@ -38,9 +38,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FolderIcon from '@mui/icons-material/Folder';
-import SaveIcon from '@mui/icons-material/Save';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ExportIcon from '@mui/icons-material/FileDownload';
+import FileUpload from '../FileUpload/FileUpload';
 import { format } from 'date-fns';
 import { vi } from 'date-fns/locale';
 import { useNavigate } from 'react-router-dom';
@@ -105,6 +105,65 @@ const DeleteChatDialog = ({ open, onClose, onConfirm }) => {
 };
 
 /**
+ * Dialog xác nhận đăng xuất
+ */
+const LogoutConfirmDialog = ({ open, onClose, onConfirm }) => {
+    return (
+        <Dialog
+            open={open}
+            onClose={onClose}
+            maxWidth="sm"
+            PaperProps={{
+                sx: {
+                    bgcolor: 'background.darkLight',
+                    color: 'text.light',
+                    borderRadius: 3,
+                }
+            }}
+        >
+            <DialogTitle sx={{ color: 'text.light', fontWeight: 500 }}>Xác nhận đăng xuất</DialogTitle>
+            <DialogContent>
+                <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+                    Bạn có chắc chắn muốn đăng xuất khỏi hệ thống?
+                </Typography>
+                <Typography variant="body2" sx={{ color: 'text.secondary', mt: 1, fontSize: '0.875rem' }}>
+                    Bạn sẽ cần đăng nhập lại để tiếp tục sử dụng ứng dụng.
+                </Typography>
+            </DialogContent>
+            <DialogActions sx={{ px: 3, pb: 2 }}>
+                <Button
+                    onClick={onClose}
+                    variant="outlined"
+                    sx={{
+                        borderColor: 'divider',
+                        color: 'text.secondary',
+                        '&:hover': {
+                            borderColor: 'primary.main',
+                            backgroundColor: 'rgba(14, 165, 233, 0.04)'
+                        }
+                    }}
+                >
+                    Hủy
+                </Button>
+                <Button
+                    onClick={onConfirm}
+                    variant="contained"
+                    color="primary"
+                    sx={{
+                        boxShadow: '0 4px 12px rgba(14, 165, 233, 0.25)',
+                        '&:hover': {
+                            boxShadow: '0 6px 16px rgba(14, 165, 233, 0.30)',
+                        },
+                    }}
+                >
+                    Đăng xuất
+                </Button>
+            </DialogActions>
+        </Dialog>
+    );
+};
+
+/**
  * Main chat container component that manages the chat UI
  */
 const ChatContainer = () => {
@@ -129,12 +188,24 @@ const ChatContainer = () => {
     const [selectedChat, setSelectedChat] = useState(null);
     const [chatToDelete, setChatToDelete] = useState(null);
     const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+    const [showFileUpload, setShowFileUpload] = useState(false);
+    const [logoutDialogOpen, setLogoutDialogOpen] = useState(false);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     const isSmall = useMediaQuery(theme.breakpoints.down('sm'));
 
     // Drawer width
     const drawerWidth = 280;
+
+    // Handle file upload
+    const handleFileUploadClick = () => {
+        setShowFileUpload(true);
+    };
+
+    // Function to handle close FileUpload
+    const handleCloseFileUpload = () => {
+        setShowFileUpload(false);
+    };
 
     // Scroll to bottom when messages change
     useEffect(() => {
@@ -233,9 +304,17 @@ const ChatContainer = () => {
     };
 
     // Handle sign out
+    const handleSignOutClick = () => {
+        setLogoutDialogOpen(true);
+    };
+
     const handleSignOut = async () => {
         try {
+            setLogoutDialogOpen(false);
             await signOut();
+            // Clear all localStorage data
+            localStorage.clear();
+            // Navigate to login page
             navigate('/login');
         } catch (error) {
             console.error('Lỗi đăng xuất:', error);
@@ -404,7 +483,7 @@ const ChatContainer = () => {
 
             <List sx={{ pt: 0 }}>
                 <ListItemButton
-                    onClick={handleSignOut}
+                    onClick={handleSignOutClick}
                     sx={{
                         color: 'text.light',
                         py: 1,
@@ -511,7 +590,20 @@ const ChatContainer = () => {
                                 </IconButton>
                             </Tooltip>
                         )}
-
+                        <Tooltip title="Tải file">
+                            <IconButton
+                                size="small"
+                                onClick={handleFileUploadClick}
+                                sx={{
+                                    color: 'text.light',
+                                    '&:hover': {
+                                        color: 'primary.main'
+                                    }
+                                }}
+                            >
+                                <FolderIcon fontSize="small" />
+                            </IconButton>
+                        </Tooltip>
                         <Tooltip title="Tùy chọn">
                             <IconButton
                                 onClick={handleMenuOpen}
@@ -560,7 +652,7 @@ const ChatContainer = () => {
                                 <ListItemText>Xuất cuộc trò chuyện</ListItemText>
                             </MenuItem>
                             <Divider sx={{ bgcolor: 'divider' }} />
-                            <MenuItem onClick={handleSignOut}>
+                            <MenuItem onClick={handleSignOutClick}>
                                 <ListItemIcon sx={{ color: 'text.light' }}>
                                     <LogoutIcon fontSize="small" />
                                 </ListItemIcon>
@@ -579,70 +671,83 @@ const ChatContainer = () => {
                         flexDirection: 'column',
                     }}
                 >
-                    {messages.length === 0 ? (
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                justifyContent: 'center',
-                                alignItems: 'center',
-                                height: '100%',
-                                p: 4,
-                            }}
-                        >
-                            <Typography variant={isSmall ? 'h4' : 'h2'} sx={{ color: 'primary.main', fontWeight: 'bold', mb: 2 }}>
-                                Trợ lý AI
-                            </Typography>
-                            <Typography variant="body1" sx={{ color: 'text.light', textAlign: 'center', maxWidth: 500 }}>
-                                Trợ lý AI giúp bạn trả lời câu hỏi, tạo nội dung, hỗ trợ lập trình...
-                            </Typography>
-                            <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 500, mt: 2 }}>
-                                Dữ liệu chat của bạn được lưu trữ với Firebase và có thể truy cập từ nhiều thiết bị khác nhau.
-                            </Typography>
-                        </Box>
+                    {!showFileUpload ? (
+                        <>
+                            {messages.length === 0 ? (
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        flexDirection: 'column',
+                                        justifyContent: 'center',
+                                        alignItems: 'center',
+                                        height: '100%',
+                                        p: 4,
+                                    }}
+                                >
+                                    <Typography variant={isSmall ? 'h4' : 'h2'} sx={{ color: 'primary.main', fontWeight: 'bold', mb: 2 }}>
+                                        Trợ lý AI
+                                    </Typography>
+                                    <Typography variant="body1" sx={{ color: 'text.light', textAlign: 'center', maxWidth: 500 }}>
+                                        Trợ lý AI giúp bạn trả lời câu hỏi, tạo nội dung, hỗ trợ lập trình...
+                                    </Typography>
+                                    <Typography variant="body2" sx={{ color: 'text.secondary', textAlign: 'center', maxWidth: 500, mt: 2 }}>
+                                        Dữ liệu chat của bạn được lưu trữ với Firebase và có thể truy cập từ nhiều thiết bị khác nhau.
+                                    </Typography>
+                                </Box>
+                            ) : (
+                                messages.map((message) => (
+                                    <ChatMessage key={message.id} message={message} />
+                                ))
+                            )}
+
+                            {isLoading && (
+                                <Box
+                                    sx={{
+                                        display: 'flex',
+                                        justifyContent: 'center',
+                                        p: 4,
+                                        borderBottom: '1px solid',
+                                        borderColor: 'divider',
+                                        bgcolor: 'background.darkLight',
+                                    }}
+                                >
+                                    <CircularProgress size={24} sx={{ color: 'primary.main' }} />
+                                </Box>
+                            )}
+
+                            {error && (
+                                <Box
+                                    sx={{
+                                        p: 4,
+                                        borderBottom: '1px solid',
+                                        borderColor: 'divider',
+                                        bgcolor: 'background.darkLight',
+                                    }}
+                                >
+                                    <Alert
+                                        severity="error"
+                                        sx={{
+                                            bgcolor: 'transparent',
+                                            color: 'error.main',
+                                            '& .MuiAlert-icon': {
+                                                color: 'error.main'
+                                            }
+                                        }}
+                                    >
+                                        {error}
+                                    </Alert>
+                                </Box>
+                            )}
+                        </>
                     ) : (
-                        messages.map((message) => (
-                            <ChatMessage key={message.id} message={message} />
-                        ))
-                    )}
-
-                    {isLoading && (
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                justifyContent: 'center',
-                                p: 4,
-                                borderBottom: '1px solid',
-                                borderColor: 'divider',
-                                bgcolor: 'background.darkLight',
+                        <FileUpload
+                            open={showFileUpload}
+                            onClose={handleCloseFileUpload}
+                            onFilesSelected={(files) => {
+                                console.log('Files selected:', files);
+                                // Xử lý files đã chọn ở đây
                             }}
-                        >
-                            <CircularProgress size={24} sx={{ color: 'primary.main' }} />
-                        </Box>
-                    )}
-
-                    {error && (
-                        <Box
-                            sx={{
-                                p: 4,
-                                borderBottom: '1px solid',
-                                borderColor: 'divider',
-                                bgcolor: 'background.darkLight',
-                            }}
-                        >
-                            <Alert
-                                severity="error"
-                                sx={{
-                                    bgcolor: 'transparent',
-                                    color: 'error.main',
-                                    '& .MuiAlert-icon': {
-                                        color: 'error.main'
-                                    }
-                                }}
-                            >
-                                {error}
-                            </Alert>
-                        </Box>
+                        />
                     )}
 
                     <div ref={messagesEndRef} />
@@ -669,6 +774,11 @@ const ChatContainer = () => {
                 open={deleteDialogOpen}
                 onClose={() => setDeleteDialogOpen(false)}
                 onConfirm={handleDeleteChat}
+            />
+            <LogoutConfirmDialog
+                open={logoutDialogOpen}
+                onClose={() => setLogoutDialogOpen(false)}
+                onConfirm={handleSignOut}
             />
         </Box>
     );

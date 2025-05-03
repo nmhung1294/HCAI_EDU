@@ -1,0 +1,243 @@
+.file-upload-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.file-upload-area {
+    padding: 4rem 2rem;
+    text-align: center;
+    border: 2px dashed rgba(14, 165, 233, 0.3);
+    border-radius: 16px !important;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 400px;
+}
+
+.file-upload-area:hover {
+    border-color: rgba(14, 165, 233, 0.6);
+    background: rgba(14, 165, 233, 0.03);
+}
+
+.file-upload-area.dragging {
+    border-color: #0ea5e9;
+    background: rgba(14, 165, 233, 0.05);
+    transform: scale(1.01);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.12);
+}
+
+.upload-icon-container {
+    margin-bottom: 1.5rem;
+    background: rgba(14, 165, 233, 0.1);
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.15);
+}
+
+.upload-icon {
+    font-size: 40px !important;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.upload-title {
+    margin-bottom: 0.5rem !important;
+    font-weight: 600 !important;
+}
+
+.upload-subtitle {
+    margin-bottom: 1.5rem !important;
+}
+
+.browse-button {
+    margin-bottom: 1.5rem !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 6px 16px rgba(14, 165, 233, 0.25) !important;
+}
+
+.browse-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.35) !important;
+}
+
+.file-limit-text {
+    font-size: 0.75rem;
+}
+
+.file-list {
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+.file-item {
+    padding: 15px !important;
+    transition: all 0.2s ease;
+}
+
+.file-item:hover {
+    background-color: rgba(15, 23, 42, 0.05);
+}
+
+.file-icon {
+    font-size: 28px !important;
+    transition: transform 0.3s ease;
+}
+
+.pdf-icon {
+    color: #ef4444 !important;
+}
+
+.image-icon {
+    color: #10b981 !important;
+}
+
+.doc-icon {
+    color: #3b82f6 !important;
+}
+
+.text-icon {
+    color: #8b5cf6 !important;
+}
+
+.excel-icon {
+    color: #22c55e !important;
+}
+
+.code-icon {
+    color: #f59e0b !important;
+}
+
+.zip-icon {
+    color: #7c3aed !important;
+}
+
+.file-item:hover .file-icon,
+.file-card:hover .file-icon {
+    transform: scale(1.1);
+}
+
+.success-icon {
+    margin-right: 12px;
+    font-size: 20px !important;
+}
+
+.delete-button {
+    opacity: 0.7;
+    transition: all 0.2s ease !important;
+}
+
+.delete-button:hover {
+    color: #ef4444 !important;
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    opacity: 1;
+}
+
+/* Card styles */
+.file-card {
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.file-card .file-icon {
+    font-size: 40px !important;
+    transition: all 0.3s ease;
+}
+
+/* Animations for UI elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.file-item {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.file-card {
+    animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Cool gradient background effect */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .file-upload-area {
+        padding: 3rem 1rem;
+        min-height: 300px;
+    }
+
+    .upload-icon-container {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 1rem;
+    }
+
+    .upload-icon {
+        font-size: 32px !important;
+    }
+
+    .browse-button {
+        padding: 8px 20px !important;
+    }
+}

@@ -55,9 +55,10 @@ Create a `.env` file in the project root and add your Google API key:
 
 ```
 GOOGLE_API_KEY=YOUR_API_KEY
+COHERE_API_KEY=YOUR_COHERE_API_KEY
 ```
 
-Replace `YOUR_API_KEY` with your actual Google Gemini API key. 🔒
+Replace `YOUR_API_KEY, YOUR_COHERE_API_KEY` with your actual Google Gemini API and COHERE API key. 🔒
 
 ### 4. Run the FastAPI Server 🚀
 
