@@ -5,11 +5,12 @@ from llama_index.core.query_engine import RouterQueryEngine
 from models.sqlrag_query import SQLQueryEngine, get_sql_template,get_create_table_statement, get_tables
 from models.llm_query import LlmQueryEngine
 from models.config import *
-from models.raptor_query import get_raptor, get_files
+from models.raptor_query import get_raptor, get_files, RAPTOR, get_files_user
 from models.web_scraper_query import WebScraperQueryEngine
 
-import asyncio
-import inspect# Create query engine
+
+
+# Create query engine
 # llm
 llm_query_engine = LlmQueryEngine(llm_gemini=llm, prompt=DEFUALT_DIRECT_LLM_PROMPT)
 
@@ -65,10 +66,6 @@ router_query_engine = RouterQueryEngine(
     llm=llm
 )
 
-# from concurrent.futures import ThreadPoolExecutor
-#
-# def worker(user_prompt: str):
-#     return router_query_engine.query(user_prompt)
 
 def get_chatbot_response(user_prompt: str) -> str:
     """Generate a chatbot response based on the conversation context."""
@@ -132,3 +129,34 @@ def get_chatbot_response(user_prompt: str) -> str:
         return str(tailored_response)
 
     return str(response)
+
+
+def get_chatbot_response_from_file(user_prompt: str, user_id: str, file_paths: list) -> str:
+    # Only RAPTOR tools.
+    custom_velociraptor = RAPTOR(files=get_files_user(user_id, file_paths), collection_name=user_id, force_rebuild=False )
+    custom_raptor_tool = QueryEngineTool.from_defaults(
+        query_engine=custom_velociraptor.query_engine,
+        name="raptor_query_engine",
+        description="Query: {query}"
+    )
+
+    response = custom_raptor_tool.query_engine.query(user_prompt)
+
+    print("RAPTOR CUSTOM INTENT")
+    print(response)
+    tailored_response = llm.complete(
+        f"***Instructions for answering the user query:***\n"
+        f"Always make sure to answer in Vietnamese language, but do not translate the code snippets nor IT terms.\n"
+        f"You are a good professor and know how to explain things well to students of different levels. Student is asking you the following question:\n"
+        f"<LATEST USER QUERY>\n"
+        f"{user_prompt} \n"
+        f"<LATEST USER QUERY END>\n"
+        f"Answer the student directly.\n"
+        f"Use the following knowledge to answer the question:\n"
+        f"""
+        <KNOWLEDGE START>
+        {response}
+        <KNOWLEDGE END>
+        """
+    )
+    return str(tailored_response)
