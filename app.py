@@ -49,13 +49,16 @@ def chat_with_bot(request: ChatRequest):
     if not user_input:
         raise HTTPException(status_code=400, detail="Input text cannot be empty.")
 
-    last_exception = None
-    for attempt in range(2):  # Try twice
-        try:
-            bot_response = get_chatbot_response(f"User: {user_input}\nBot:")
-            return ChatResponse(bot_response=bot_response)
-        except Exception as e:
-            last_exception = e
+    bot_response = get_chatbot_response(f"User: {user_input}\nBot:")
+    return ChatResponse(bot_response=bot_response)
+
+    # last_exception = None
+    # for attempt in range(2):  # Try twice
+    #     try:
+    #         bot_response = get_chatbot_response(f"User: {user_input}\nBot:")
+    #         return ChatResponse(bot_response=bot_response)
+    #     except Exception as e:
+    #         last_exception = e
 
     # If both attempts failed
     raise HTTPException(status_code=500, detail=f"Bot failed to respond: {str(last_exception)}")
