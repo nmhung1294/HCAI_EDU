@@ -9,7 +9,7 @@ from llama_index.embeddings.cohere import CohereEmbedding
 from llama_index.core.query_engine import RetrieverQueryEngine
 import pandas as pd
 
-
+from fastapi.concurrency import run_in_threadpool
 
 import chromadb
 
@@ -20,14 +20,15 @@ class RAPTOR:
         # Set up logging
         print("Initializing RAPTOR with collection_name: %s", collection_name)
 
-        # start_time = time.time()
-
         try:
             self.client = chromadb.PersistentClient(path="chroma_db")
 
             if force_rebuild:
                 print("Force rebuilding collection...")
-                self.client.delete_collection(collection_name)
+                if collection_name in self.client.list_collections():
+                    self.client.delete_collection(collection_name)
+                else:
+                    print(f"Collection '{collection_name}' does not exist. Skipping deletion.")
 
             self.collection = self.client.get_or_create_collection(collection_name)
 
@@ -38,6 +39,7 @@ class RAPTOR:
 
             if force_rebuild or len(os.listdir("chroma_db")) == 1:
                 self.retriever = self.build_raptor_tree()
+            #How to wait for retriever is done ?
 
             self.retriever = self.setup_retriever()
             self.query_engine = self.setup_query_engine()
@@ -45,9 +47,6 @@ class RAPTOR:
             print("An error occurred during initialization: %s", e)
             raise
 
-        # end_time = time.time()
-        # setup_duration = end_time - start_time
-        # print("RAPTOR setup completed in %s seconds", setup_duration)
 
     def build_raptor_tree(self):
         try:
@@ -107,6 +106,11 @@ def get_files():
     used_files = used_files_df['file_name'].tolist()
     full_paths = [os.path.join(UPLOAD_DIR, file) for file in used_files]
     print("full_paths", full_paths)
+    return full_paths
+
+
+def get_files_user(user_id, file_paths):
+    full_paths = [os.path.join(UPLOAD_DIR,user_id, file) for file in file_paths]
     return full_paths
 
 

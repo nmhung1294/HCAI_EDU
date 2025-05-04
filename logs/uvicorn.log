@@ -1,0 +1,869 @@
+[Sun May  4 04:58:04 AM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [378905] using WatchFiles
+INFO:     Started server process [378913]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+[Sun May  4 04:59:38 AM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [378913]
+INFO:     Stopping reloader process [378905]
+[Sun May  4 04:59:38 AM +07 2025] Uvicorn stopped.
+[Sun May  4 05:11:53 AM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [386926] using WatchFiles
+INFO:     Started server process [386935]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:50502 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50502 - "GET /openapi.json HTTP/1.1" 200 OK
+[Sun May  4 05:13:07 AM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [386935]
+INFO:     Stopping reloader process [386926]
+[Sun May  4 05:13:08 AM +07 2025] Uvicorn stopped.
+[Sun May  4 05:46:02 AM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [406991] using WatchFiles
+[Sun May  4 05:46:05 AM +07 2025] Script interrupted. Shutting down.
+[Sun May  4 05:46:12 AM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [407155] using WatchFiles
+INFO:     Started server process [407000]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+ERROR:    Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 700, in lifespan
+    await receive()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/lifespan/on.py", line 137, in receive
+    return await self.receive_queue.get()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/queues.py", line 158, in get
+    await getter
+asyncio.exceptions.CancelledError
+
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     Stopping reloader process [406991]
+[Sun May  4 05:46:31 AM +07 2025] Uvicorn stopped.
+INFO:     Started server process [407164]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+An error occurred during initialization: %s Collection [IuLAyPWiZwV4unB2TdXqvXpyXup1] does not exists
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+An error occurred during initialization: %s Collection [IuLAyPWiZwV4unB2TdXqvXpyXup1] does not exists
+INFO:     127.0.0.1:46510 - "POST /chat_with_file HTTP/1.1" 500 Internal Server Error
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+An error occurred during initialization: %s Collection [IuLAyPWiZwV4unB2TdXqvXpyXup1] does not exists
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+An error occurred during initialization: %s Collection [IuLAyPWiZwV4unB2TdXqvXpyXup1] does not exists
+INFO:     127.0.0.1:46510 - "POST /chat_with_file HTTP/1.1" 500 Internal Server Error
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+An error occurred during initialization: %s Collection [IuLAyPWiZwV4unB2TdXqvXpyXup1] does not exists
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+An error occurred during initialization: %s Collection [IuLAyPWiZwV4unB2TdXqvXpyXup1] does not exists
+INFO:     127.0.0.1:55230 - "POST /chat_with_file HTTP/1.1" 500 Internal Server Error
+WARNING:  WatchFiles detected changes in 'models/raptor_query.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [407164]
+[Sun May  4 05:49:27 AM +07 2025] Script interrupted. Shutting down.
+[Sun May  4 05:49:30 AM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+ERROR:    [Errno 98] Address already in use
+[Sun May  4 05:49:30 AM +07 2025] Uvicorn stopped.
+INFO:     Started server process [409363]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Stopping reloader process [407155]
+[Sun May  4 05:49:39 AM +07 2025] Uvicorn stopped.
+[Sun May  4 05:50:50 AM +07 2025] Script interrupted. Shutting down.
+[Sun May  4 05:50:51 AM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [410506] using WatchFiles
+INFO:     Started server process [410515]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:56976 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56976 - "GET /openapi.json HTTP/1.1" 200 OK
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 1 clusters.
+Level 0 created summaries/clusters: 1
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+RAPTOR CUSTOM INTENT
+INFO:     127.0.0.1:56990 - "POST /chat_with_file HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [410515]
+[Sun May  4 05:52:39 AM +07 2025] Script interrupted. Shutting down.
+[Sun May  4 05:52:42 AM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+ERROR:    [Errno 98] Address already in use
+[Sun May  4 05:52:43 AM +07 2025] Uvicorn stopped.
+[Sun May  4 05:52:49 AM +07 2025] Script interrupted. Shutting down.
+INFO:     Started server process [411735]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Stopping reloader process [410506]
+[Sun May  4 05:52:59 AM +07 2025] Uvicorn stopped.
+[Sun May  4 05:53:04 AM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [412146] using WatchFiles
+INFO:     Started server process [412154]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:44522 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44522 - "GET /openapi.json HTTP/1.1" 200 OK
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+RAPTOR CUSTOM INTENT
+Mixture of Experts (MoE) is a neural network architecture that increases model capacity without proportionally increasing computation. It achieves this by activating only a subset of expert sub-networks for each input. The structure involves input, a router, selection of top-k experts, expert processing, and a weighted output.
+
+INFO:     127.0.0.1:44532 - "POST /chat_with_file HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'test_api.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [412154]
+INFO:     Started server process [412919]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+RAPTOR CUSTOM INTENT
+Mixture of Experts (MoE) is a neural network architecture that increases model capacity without proportionally increasing computation. It achieves this by activating only a subset of expert sub-networks for each input. The structure involves input, a router, selection of top-k experts, expert processing, and a weighted output.
+
+INFO:     127.0.0.1:50028 - "POST /chat_with_file HTTP/1.1" 200 OK
+[Sun May  4 05:54:43 AM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [412919]
+INFO:     Stopping reloader process [412146]
+[Sun May  4 05:54:43 AM +07 2025] Uvicorn stopped.
+[Sun May  4 08:46:43 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [26079] using WatchFiles
+Process SpawnProcess-1:
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+    await self._serve(sockets)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+    config.load()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/importer.py", line 22, in import_from_string
+    raise exc from None
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/media/ldmt/Data/Projects/HCAI_Edu/app.py", line 4, in <module>
+    from models.chat import get_chatbot_response
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/chat.py", line 11, in <module>
+    from user_files import get_user_DB
+ModuleNotFoundError: No module named 'user_files'
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+[Sun May  4 08:47:37 PM +07 2025] Script interrupted. Shutting down.
+[Sun May  4 08:47:38 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [26933] using WatchFiles
+INFO:     Started server process [26861]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Stopping reloader process [26079]
+[Sun May  4 08:48:12 PM +07 2025] Uvicorn stopped.
+INFO:     Started server process [26945]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:58016 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58016 - "GET /openapi.json HTTP/1.1" 200 OK
+[Sun May  4 08:48:58 PM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [26945]
+INFO:     Stopping reloader process [26933]
+[Sun May  4 08:48:58 PM +07 2025] Uvicorn stopped.
+[Sun May  4 08:51:43 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [29503] using WatchFiles
+INFO:     Started server process [29535]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:42690 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42690 - "GET /openapi.json HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [29535]
+INFO:     Started server process [31303]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:46252 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46252 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46262 - "POST /chat_with_file HTTP/1.1" 500 Internal Server Error
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [31303]
+INFO:     Started server process [32071]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:33732 - "POST /chat_with_file HTTP/1.1" 500 Internal Server Error
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [32071]
+INFO:     Started server process [33336]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:48506 - "POST /chat_with_file HTTP/1.1" 500 Internal Server Error
+WARNING:  WatchFiles detected changes in 'test.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [33336]
+INFO:     Started server process [34417]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [34417]
+INFO:     Started server process [34981]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [34981]
+INFO:     Started server process [35639]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:60454 - "GET /docs HTTP/1.1" 200 OK
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 1 clusters.
+Level 0 created summaries/clusters: 1
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+INFO:     127.0.0.1:60460 - "POST /chat_with_file HTTP/1.1" 200 OK
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+INFO:     127.0.0.1:51034 - "POST /chat_with_file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54722 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40280 - "GET /pdf/models/uploaded_files/IuLAyPWiZwV4unB2TdXqvXpyXup1/Lab09%20-%20GPU%20Programming%20-%20Matrix%20Multiplication.pdf HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 5 clusters.
+An error occurred while building raptor tree: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7fd2a4228540>; the handler is closed
+An error occurred during initialization: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7fd2a4228540>; the handler is closed
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+INFO:     127.0.0.1:53640 - "POST /chat_with_file HTTP/1.1" 200 OK
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+INFO:     127.0.0.1:33752 - "POST /chat_with_file HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/pypdf/_utils.py:240: RuntimeWarning: coroutine 'Dispatcher.span.<locals>.async_wrapper' was never awaited
+  m = regex.search(name + tok)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+INFO:     127.0.0.1:37842 - "POST /chat_with_file HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [35639]
+INFO:     Stopping reloader process [29503]
+[Sun May  4 09:06:50 PM +07 2025] Script interrupted. Shutting down.
+[Sun May  4 09:06:50 PM +07 2025] Uvicorn stopped.
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+[Sun May  4 09:11:28 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [41854] using WatchFiles
+INFO:     Started server process [41862]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:44966 - "OPTIONS /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44972 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55486 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55486 - "GET /openapi.json HTTP/1.1" 200 OK
+User IuLAyPWiZwV4unB2TdXqvXpyXup1 has uploaded new files: ['Lab11 - GPU Programming - Mixture of Experts.pdf'].Rebuilding RAPTOR collection...
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 1 clusters.
+Level 0 created summaries/clusters: 1
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+Mixture of Experts (MoE) is a neural network architecture that increases model capacity without proportionally increasing computation. It activates only a subset of "expert" sub-networks for each input. Its structure involves input, a router, top-k experts selected, expert processing, and weighted output. The task involves optimizing the expert processing and output summing.
+
+INFO:     127.0.0.1:55488 - "POST /chat_with_file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48020 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54576 - "GET /pdf/models/uploaded_files/IuLAyPWiZwV4unB2TdXqvXpyXup1/Lab11%20-%20GPU%20Programming%20-%20Mixture%20of%20Experts.pdf HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+User IuLAyPWiZwV4unB2TdXqvXpyXup1 has uploaded new files: ['Lab09 - GPU Programming - Matrix Multiplication.pdf', 'Lab11 - GPU Programming - Mixture of Experts.pdf'].Rebuilding RAPTOR collection...
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 5 clusters.
+An error occurred while building raptor tree: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7f55d8218520>; the handler is closed
+An error occurred during initialization: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7f55d8218520>; the handler is closed
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+I am sorry, but the provided documents do not contain information about different ways to implement Matrix multiplication. The focus of the lab assignment is on implementing and optimizing a Mixture of Experts (MoE) module.
+
+INFO:     127.0.0.1:58124 - "POST /chat_with_file HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/pypdf/_utils.py:240: RuntimeWarning: coroutine 'Dispatcher.span.<locals>.async_wrapper' was never awaited
+  m = regex.search(name + tok)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+I am sorry, but the provided documents do not contain information about different ways to implement Matrix multiplication. The focus of the lab assignment is on implementing and optimizing a Mixture of Experts (MoE) module.
+
+INFO:     127.0.0.1:59228 - "POST /chat_with_file HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [41862]
+INFO:     Started server process [44924]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [44924]
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Started server process [45963]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Started server process [46389]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [46389]
+INFO:     Started server process [47882]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [47882]
+[Sun May  4 09:25:49 PM +07 2025] Script interrupted. Shutting down.
+[Sun May  4 09:25:50 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+ERROR:    [Errno 98] Address already in use
+[Sun May  4 09:25:51 PM +07 2025] Uvicorn stopped.
+INFO:     Started server process [50775]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Stopping reloader process [41854]
+[Sun May  4 09:26:13 PM +07 2025] Uvicorn stopped.
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+[Sun May  4 09:26:40 PM +07 2025] Script interrupted. Shutting down.
+[Sun May  4 09:26:42 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [51400] using WatchFiles
+INFO:     Started server process [51433]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:58692 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58692 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41692 - "OPTIONS /chat HTTP/1.1" 200 OK
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+RAPTOR INTENT
+INFO:     127.0.0.1:41696 - "POST /chat HTTP/1.1" 200 OK
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+RAPTOR INTENT
+INFO:     127.0.0.1:53998 - "POST /chat HTTP/1.1" 200 OK
+[Sun May  4 09:31:26 PM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [51433]
+INFO:     Stopping reloader process [51400]
+[Sun May  4 09:31:26 PM +07 2025] Uvicorn stopped.
+[Sun May  4 09:34:15 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [55824] using WatchFiles
+INFO:     Started server process [55846]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:43314 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43314 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43322 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43322 - "GET /openapi.json HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:40120 - "POST /chat HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/app.py", line 52, in chat_with_bot
+    bot_response = get_chatbot_response(f"User: {user_input}\nBot:")
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/chat.py", line 86, in get_chatbot_response
+    router_query_engine = RouterQueryEngine(
+                          ^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/query_engine/router_query_engine.py", line 120, in __init__
+    self._query_engines = [x.query_engine for x in query_engine_tools]
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/query_engine/router_query_engine.py", line 120, in <listcomp>
+    self._query_engines = [x.query_engine for x in query_engine_tools]
+                           ^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'query_engine'
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [55846]
+INFO:     Started server process [56962]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:35832 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35832 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35840 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35840 - "GET /openapi.json HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+RAPTOR INTENT
+INFO:     127.0.0.1:33778 - "POST /chat HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+RAPTOR INTENT
+INFO:     127.0.0.1:35658 - "POST /chat HTTP/1.1" 200 OK
+[Sun May  4 09:37:25 PM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [56962]
+INFO:     Stopping reloader process [55824]
+[Sun May  4 09:37:25 PM +07 2025] Uvicorn stopped.
+[Sun May  4 09:41:11 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [59987] using WatchFiles
+INFO:     Started server process [59995]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:37444 - "OPTIONS /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37460 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+User IuLAyPWiZwV4unB2TdXqvXpyXup1 has uploaded new files: ['Lab11 - GPU Programming - Mixture of Experts.pdf'].Rebuilding RAPTOR collection...
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 1 clusters.
+Level 0 created summaries/clusters: 1
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+Mixture of Experts (MoE) là một kiến trúc mạng nơ-ron được thiết kế để tăng khả năng của mô hình mà không làm tăng tỷ lệ tính toán. Nó hoạt động bằng cách chỉ kích hoạt một tập hợp con các mạng con "chuyên gia" cho mỗi đầu vào, làm cho nó rất hiệu quả đối với các mô hình quy mô lớn như LLM (ví dụ: Mistral, DeepSeek). Cấu trúc của nó bao gồm: Đầu vào → Bộ định tuyến → Top-k Các chuyên gia được chọn → Xử lý chuyên gia → Đầu ra có trọng số.
+
+INFO:     127.0.0.1:58536 - "POST /chat_with_file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46032 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+User IuLAyPWiZwV4unB2TdXqvXpyXup1 has uploaded new files: ['Lab09 - GPU Programming - Matrix Multiplication.pdf', 'Lab11 - GPU Programming - Mixture of Experts.pdf'].Rebuilding RAPTOR collection...
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 5 clusters.
+An error occurred while building raptor tree: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7fd86901ee10>; the handler is closed
+An error occurred during initialization: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7fd86901ee10>; the handler is closed
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+User IuLAyPWiZwV4unB2TdXqvXpyXup1 has uploaded new files: ['Lab09 - GPU Programming - Matrix Multiplication.pdf', 'Lab11 - GPU Programming - Mixture of Experts.pdf'].Rebuilding RAPTOR collection...
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 5 clusters.
+Level 0 created summaries/clusters: 5
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+To calculate each element C[i][j] in the resulting matrix C, you can use the dot product of the i row of matrix A and the j column of matrix B.
+
+INFO:     127.0.0.1:43476 - "POST /chat_with_file HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/pypdf/_utils.py:240: RuntimeWarning: coroutine 'Dispatcher.span.<locals>.async_wrapper' was never awaited
+  m = regex.search(name + tok)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+The matrix multiplication implementations to be ported include Naive, Tiled (Block level), Tiled (1D - ILP), Tiled (2D - ILP), Vectorized, and Warp Tiled versions. An optimized version written in "best_gemm.cpp" is also required.
+
+INFO:     127.0.0.1:56574 - "POST /chat_with_file HTTP/1.1" 200 OK
+[Sun May  4 09:47:21 PM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [59995]
+INFO:     Stopping reloader process [59987]
+[Sun May  4 09:47:21 PM +07 2025] Uvicorn stopped.
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
