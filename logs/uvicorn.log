@@ -867,3 +867,284 @@ INFO:     Stopping reloader process [59987]
 [Sun May  4 09:47:21 PM +07 2025] Uvicorn stopped.
 /media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
   warnings.warn('resource_tracker: There appear to be %d '
+[Mon May  5 10:52:23 AM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [76992] using WatchFiles
+INFO:     Started server process [77026]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:40964 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40964 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40990 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40980 - "GET /pdf/models/uploaded_files/IuLAyPWiZwV4unB2TdXqvXpyXup1/Bi%C3%AAn%20d%E1%BB%8Bch%201.pdf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41912 - "GET /pdf/models/uploaded_files/IuLAyPWiZwV4unB2TdXqvXpyXup1/Bi%C3%AAn%20d%E1%BB%8Bch%201.pdf HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+User IuLAyPWiZwV4unB2TdXqvXpyXup1 has uploaded new files: ['Biên dịch 1.pdf', 'Lab09 - GPU Programming - Matrix Multiplication.pdf', 'Lab11 - GPU Programming - Mixture of Experts.pdf'].Rebuilding RAPTOR collection...
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 32 clusters.
+An error occurred while building raptor tree: %s 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '0s'}]}}
+An error occurred during initialization: %s 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-2.0-flash'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '0s'}]}}
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+User IuLAyPWiZwV4unB2TdXqvXpyXup1 has uploaded new files: ['Biên dịch 1.pdf', 'Lab09 - GPU Programming - Matrix Multiplication.pdf', 'Lab11 - GPU Programming - Mixture of Experts.pdf'].Rebuilding RAPTOR collection...
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 29 clusters.
+An error occurred while building raptor tree: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7f79984c5b30>; the handler is closed
+An error occurred during initialization: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7f79984c5b30>; the handler is closed
+INFO:     127.0.0.1:39250 - "POST /chat_with_file HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58228 - "OPTIONS /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58244 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/pypdf/_utils.py:240: RuntimeWarning: coroutine 'Dispatcher.span.<locals>.async_wrapper' was never awaited
+  m = regex.search(name + tok)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+Mixture of Experts (MoE) là một kiến trúc mạng nơ-ron được thiết kế để tăng khả năng của mô hình mà không làm tăng tỷ lệ tính toán. Nó hoạt động bằng cách chỉ kích hoạt một tập hợp con các mạng con "chuyên gia" cho mỗi đầu vào, làm cho nó rất hiệu quả đối với các mô hình quy mô lớn như LLM (ví dụ: Mistral, DeepSeek). Cấu trúc của nó là: Input → Router → Top-k Experts Selected → Expert Processing → Weighted Output.
+INFO:     127.0.0.1:47918 - "POST /chat_with_file HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [77026]
+INFO:     Started server process [86635]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:33368 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+User IuLAyPWiZwV4unB2TdXqvXpyXup1 has uploaded new files: ['Biên dịch 1.pdf', 'Lab09 - GPU Programming - Matrix Multiplication.pdf', 'Lab11 - GPU Programming - Mixture of Experts.pdf'].Rebuilding RAPTOR collection...
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 28 clusters.
+An error occurred while building raptor tree: %s 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}
+An error occurred during initialization: %s 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}
+INFO:     127.0.0.1:49130 - "POST /chat_with_file HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/app.py", line 82, in chat_with_file
+    bot_response = get_chatbot_response_from_file(user_input, user_id, file_paths)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/chat.py", line 192, in get_chatbot_response_from_file
+    custom_raptor_tool = init_custom_raptor_tool(user_id)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/chat.py", line 96, in init_custom_raptor_tool
+    custom_velociraptor = RAPTOR(
+                          ^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/raptor_query.py", line 41, in __init__
+    self.retriever = self.build_raptor_tree()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/raptor_query.py", line 54, in build_raptor_tree
+    raptor_pack = RaptorPack(
+                  ^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 358, in __init__
+    self.retriever = RaptorRetriever(
+                     ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 139, in __init__
+    asyncio.run(self.insert(documents))
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 195, in insert
+    summaries_per_cluster = await self.summary_module.generate_summaries(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 100, in generate_summaries
+    responses.append(await job)
+                     ^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/response_synthesizers/base.py", line 306, in asynthesize
+    response_str = await self.aget_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/response_synthesizers/tree_summarize.py", line 86, in aget_response
+    response = await self._llm.apredict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/llms/llm.py", line 694, in apredict
+    chat_response = await self.achat(messages)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/llms/callbacks.py", line 75, in wrapped_async_llm_chat
+    f_return_val = await f(_self, messages, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/llms/google_genai/base.py", line 255, in achat
+    response = await chat.send_message(next_msg.parts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/chats.py", line 421, in send_message
+    response = await self._modules.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/models.py", line 6489, in generate_content
+    response = await self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/models.py", line 5491, in _generate_content
+    response_dict = await self._api_client.async_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/_api_client.py", line 760, in async_request
+    result = await self._async_request(http_request=http_request, stream=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/_api_client.py", line 704, in _async_request
+    await errors.APIError.raise_for_async_response(response)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/errors.py", line 129, in raise_for_async_response
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'model': 'gemini-2.0-flash', 'location': 'global'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '57s'}]}}
+[Mon May  5 11:08:49 AM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [86635]
+INFO:     Stopping reloader process [76992]
+[Mon May  5 11:08:49 AM +07 2025] Uvicorn stopped.
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
