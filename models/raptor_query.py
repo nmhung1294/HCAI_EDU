@@ -14,9 +14,10 @@ from fastapi.concurrency import run_in_threadpool
 import chromadb
 
 class RAPTOR:
-    def __init__(self, files, collection_name="edubot_raptor", force_rebuild=False):
+    def __init__(self, files, llm, collection_name="edubot_raptor", force_rebuild=False):
         self.files = files
         self.collection_name = collection_name
+        self.llm = llm
         # Set up logging
         print("Initializing RAPTOR with collection_name: %s", collection_name)
 
@@ -57,7 +58,7 @@ class RAPTOR:
                     model_name=EMBEDDING_MODEL,
                     api_key=cohere_api_key
                 ),  # Explicitly passing the API key
-                llm=llm,
+                llm=self.llm,
                 vector_store=self.vector_store,
                 similarity_top_k=SIMILARITY_TOP_K,
                 mode=RETRIEVAL_METHOD,
@@ -77,7 +78,7 @@ class RAPTOR:
                     model_name=EMBEDDING_MODEL,
                     api_key=cohere_api_key
                 ),  # Explicitly passing the API key
-                llm=llm,
+                llm=self.llm,
                 vector_store=self.vector_store,
                 similarity_top_k=SIMILARITY_TOP_K,
                 mode=RETRIEVAL_METHOD,
@@ -90,7 +91,7 @@ class RAPTOR:
         try:
             print("Setting up RetrieverQueryEngine")
             return RetrieverQueryEngine.from_args(
-                self.retriever, llm=llm,
+                self.retriever, llm=self.llm,
                 streaming=True
             )
         except Exception as e:
@@ -114,6 +115,8 @@ def get_files_user(user_id, file_paths):
     return full_paths
 
 
-def get_raptor(files, force_rebuild=False):
-    velociraptor = RAPTOR(files=files, collection_name="edubot_raptor", force_rebuild=force_rebuild)
+def get_raptor(files, llm, force_rebuild=False):
+    velociraptor = RAPTOR(files=files,llm=llm, collection_name="edubot_raptor", force_rebuild=force_rebuild)
     return velociraptor
+
+

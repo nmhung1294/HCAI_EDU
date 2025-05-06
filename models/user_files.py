@@ -38,6 +38,9 @@ class UserFileDB:
 
     def close(self):
         self.conn.close()
+    def delete_all_users(self):
+        self.cursor.execute('DELETE FROM user_files')
+        self.conn.commit()
 
 
 def get_user_DB():
