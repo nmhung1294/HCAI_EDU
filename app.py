@@ -28,23 +28,6 @@ class ChatRequest(BaseModel):
 class ChatResponse(BaseModel):
     bot_response: str
 
-# @app.post("/chat", response_model=ChatResponse)
-# async def chat_with_bot(request: ChatRequest):
-#     user_input = request.user_input.strip()
-#     if not user_input:
-#         raise HTTPException(status_code=400, detail="Input text cannot be empty.")
-#
-#     last_exception = None
-#     for attempt in range(2):  # Try twice
-#         try:
-#             bot_response = await run_in_threadpool(get_chatbot_response, f"User: {user_input}\nBot:")
-#             return ChatResponse(bot_response=bot_response)
-#         except Exception as e:
-#             last_exception = e
-#
-#     # If both attempts failed
-#     raise HTTPException(status_code=500, detail=f"Bot failed to respond: {str(last_exception)}")
-
 @app.post("/chat", response_model=ChatResponse)
 def chat_with_bot(request: ChatRequest):
     user_input = request.user_input.strip()
@@ -53,18 +36,6 @@ def chat_with_bot(request: ChatRequest):
 
     bot_response = get_chatbot_response(f"User: {user_input}\nBot:")
     return ChatResponse(bot_response=bot_response)
-
-    # last_exception = None
-    # for attempt in range(2):  # Try twice
-    #     try:
-    #         bot_response = get_chatbot_response(f"User: {user_input}\nBot:")
-    #         return ChatResponse(bot_response=bot_response)
-    #     except Exception as e:
-    #         last_exception = e
-
-    # If both attempts failed
-    raise HTTPException(status_code=500, detail=f"Bot failed to respond: {str(last_exception)}")
-
 
 class ChatWithFileRequest(BaseModel):
     user_input: str
@@ -84,17 +55,6 @@ def chat_with_file(request: ChatWithFileRequest):
     bot_response = get_chatbot_response_from_file(user_input, user_id, file_paths)
     return ChatResponse(bot_response=bot_response)
 
-    # last_exception = None
-    # for attempt in range(2):  # Try twice
-    #     try:
-    #         # Assumes your model supports reading from a file and user input
-    #         from models.chat import get_chatbot_response_from_file
-    #         bot_response = get_chatbot_response_from_file(user_input, user_id, file_paths)
-    #         return ChatResponse(bot_response=bot_response)
-    #     except Exception as e:
-    #         last_exception = e
-
-    # raise HTTPException(status_code=500, detail=f"Bot failed to respond with file: {str(last_exception)}")
 
 @app.post("/upload_pdf/")
 def upload_pdf(user_id: str = Form(...), file: UploadFile = File(...)):

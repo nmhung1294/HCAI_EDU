@@ -2052,3 +2052,52 @@ INFO:     Stopping reloader process [9474]
 [Tue May  6 06:22:18 PM +07 2025] Uvicorn stopped.
 /media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
   warnings.warn('resource_tracker: There appear to be %d '
+[Tue May  6 23:18:46 +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/home/ptthanh/cvdhd/HCAI/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [5104] using WatchFiles
+INFO:     Started server process [5113]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:38302 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38302 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50740 - "OPTIONS /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50740 - "DELETE /delete_pdf/ HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50740 - "DELETE /delete_pdf/ HTTP/1.1" 404 Not Found
+/home/ptthanh/miniconda3/envs/hcai_edu/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Initializing RAPTOR with collection_name: %s eOiyXomdrzP3fo1kqieOUQ7cY5q2
+Force rebuilding collection...
+Collection 'eOiyXomdrzP3fo1kqieOUQ7cY5q2' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 6 clusters.
+Level 0 created summaries/clusters: 6
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:50756 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42012 - "GET /pdf/models/uploaded_files/eOiyXomdrzP3fo1kqieOUQ7cY5q2/B%C3%A1o%20C%C3%A1o%20B%C3%A0i%20T%E1%BA%ADp%20L%E1%BB%9Bn_GROUP%208.pdf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42012 - "GET /pdf/models/uploaded_files/eOiyXomdrzP3fo1kqieOUQ7cY5q2/B%C3%A1o%20C%C3%A1o%20B%C3%A0i%20T%E1%BA%ADp%20L%E1%BB%9Bn_GROUP%208.pdf HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40834 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42026 - "GET /pdf/models/uploaded_files/eOiyXomdrzP3fo1kqieOUQ7cY5q2/B%C3%A1o%20C%C3%A1o%20B%C3%A0i%20T%E1%BA%ADp%20L%E1%BB%9Bn_GROUP%208.pdf HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:40846 - "DELETE /delete_pdf/ HTTP/1.1" 404 Not Found
+[Tue May  6 23:33:41 +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [5113]
+INFO:     Stopping reloader process [5104]
+[Tue May  6 23:33:42 +07 2025] Uvicorn stopped.
+/home/ptthanh/miniconda3/envs/hcai_edu/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

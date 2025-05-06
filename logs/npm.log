@@ -238,3 +238,15 @@
   ➜  Network: use --host to expose
 [Tue May  6 06:22:18 PM +07 2025] Script interrupted. Shutting down.
 [Tue May  6 06:22:18 PM +07 2025] npm dev stopped.
+[Tue May  6 23:18:46 +07 2025] Starting npm dev...
+
+> hcai-frontend@0.0.0 dev
+> vite
+
+
+  VITE v6.3.3  ready in 239 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+[Tue May  6 23:33:41 +07 2025] Script interrupted. Shutting down.
+[Tue May  6 23:33:41 +07 2025] npm dev stopped.

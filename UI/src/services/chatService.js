@@ -24,13 +24,36 @@ const generateChatId = () => {
  */
 export const sendMessage = async (userInput) => {
   try {
-    const response = await fetch('http://localhost:8000/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ user_input: userInput }),
-    });
+    // Kiểm tra trong localStorage nếu có bookmarked_files
+    const bookmarkedFiles = JSON.parse(localStorage.getItem('bookmarked_files') || '[]');
+    const user = getUserInfo();
+    const userId = user ? user.id : '';
+    
+    let response;
+    
+    if (bookmarkedFiles && bookmarkedFiles.length > 0) {
+      // Nếu có bookmarked_files, gọi API chat_with_file
+      response = await fetch('http://localhost:8000/chat_with_file', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ 
+          user_input: userInput,
+          file_path: bookmarkedFiles,
+          user_id: userId
+        }),
+      });
+    } else {
+      // Nếu không có bookmarked_files, gọi API chat thông thường
+      response = await fetch('http://localhost:8000/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ user_input: userInput }),
+      });
+    }
 
     if (!response.ok) {
       throw new Error('Failed to fetch response from chat API');
@@ -52,7 +75,6 @@ export const sendMessage = async (userInput) => {
       sender: 'bot',
       timestamp: new Date(currentTime.getTime() + 1000).toISOString()
     };
-    const user = getUserInfo();
     if (user && user.id) {
       const chatId = window.currentChatId || generateChatId();
       window.currentChatId = chatId;
@@ -149,4 +171,4 @@ export const deleteChatFromFirebase = async (chatId) => {
     console.error('Lỗi xóa cuộc trò chuyện:', error);
     return false;
   }
-}; 
+};
