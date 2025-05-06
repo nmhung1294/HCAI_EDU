@@ -6,9 +6,11 @@ from fastapi.concurrency import run_in_threadpool
 import os, shutil
 from fastapi.responses import FileResponse
 from typing import List
-
+from models.user_files import get_user_DB
+from models.raptor_query import RAPTOR, get_files_user
 # DIR To Upload file 
 UPLOAD_DIR = os.path.join("models", "uploaded_files")
+from models.config import get_llm
 
 
 app = FastAPI()
@@ -92,10 +94,10 @@ def chat_with_file(request: ChatWithFileRequest):
     #     except Exception as e:
     #         last_exception = e
 
-    raise HTTPException(status_code=500, detail=f"Bot failed to respond with file: {str(last_exception)}")
+    # raise HTTPException(status_code=500, detail=f"Bot failed to respond with file: {str(last_exception)}")
 
 @app.post("/upload_pdf/")
-async def upload_pdf(user_id: str = Form(...), file: UploadFile = File(...)):
+def upload_pdf(user_id: str = Form(...), file: UploadFile = File(...)):
     # Check file extension
     if not file.filename.lower().endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Chỉ chấp nhận file PDF.")
@@ -105,6 +107,15 @@ async def upload_pdf(user_id: str = Form(...), file: UploadFile = File(...)):
     file_path = os.path.join(user_folder, file.filename)
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
+
+    cur_file_paths = os.listdir(os.path.join("models", "uploaded_files", user_id)) or []
+
+    custom_velociraptor = RAPTOR(
+        files=get_files_user(user_id, cur_file_paths),
+        collection_name=user_id,
+        llm=get_llm(),
+        force_rebuild=True
+    )
 
     return {"message": "Upload thành công", "file_path": file_path}
 

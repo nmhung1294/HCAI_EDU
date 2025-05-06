@@ -43,3 +43,5 @@ EMBEDDING_MODEL = "embed-multilingual-v3.0"
 selected_web_url = "https://ielts-fighter.com/tin-tuc.html"
 max_number_of_posts = 15
 
+def get_llm():
+    return GoogleGenAI(model="models/gemini-2.0-flash", google_api_key=google_api_key)

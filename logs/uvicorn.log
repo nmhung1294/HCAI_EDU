@@ -1148,3 +1148,907 @@ INFO:     Stopping reloader process [76992]
 [Mon May  5 11:08:49 AM +07 2025] Uvicorn stopped.
 /media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 2 leaked semaphore objects to clean up at shutdown
   warnings.warn('resource_tracker: There appear to be %d '
+[Tue May  6 01:35:48 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [64163] using WatchFiles
+INFO:     Started server process [64174]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:54288 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54288 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54322 - "OPTIONS /chat HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:54322 - "POST /chat HTTP/1.1" 200 OK
+[Tue May  6 01:39:35 PM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [64174]
+INFO:     Stopping reloader process [64163]
+[Tue May  6 01:39:36 PM +07 2025] Uvicorn stopped.
+[Tue May  6 02:05:02 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [81956] using WatchFiles
+INFO:     Started server process [81967]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:43492 - "OPTIONS /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43492 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44062 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+An error occurred while building raptor tree: %s asyncio.run() cannot be called from a running event loop
+An error occurred during initialization: %s asyncio.run() cannot be called from a running event loop
+INFO:     127.0.0.1:40632 - "POST /upload_pdf/ HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 212, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/app.py", line 112, in upload_pdf
+    custom_velociraptor = RAPTOR(
+                          ^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/raptor_query.py", line 41, in __init__
+    self.retriever = self.build_raptor_tree()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/raptor_query.py", line 54, in build_raptor_tree
+    raptor_pack = RaptorPack(
+                  ^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 358, in __init__
+    self.retriever = RaptorRetriever(
+                     ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 139, in __init__
+    asyncio.run(self.insert(documents))
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 186, in run
+    raise RuntimeError(
+RuntimeError: asyncio.run() cannot be called from a running event loop
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py:-1: RuntimeWarning: coroutine 'RaptorRetriever.insert' was never awaited
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback
+WARNING:  WatchFiles detected changes in 'app.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [81967]
+INFO:     Started server process [83040]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Tables in the database: dict_keys(['PJS_points', 'users'])
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 4 clusters.
+Level 0 created summaries/clusters: 4
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:53474 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+Mixture of Experts (MoE) là một kiến trúc mạng nơ-ron được thiết kế để tăng khả năng của mô hình mà không làm tăng tỷ lệ tính toán. Nó hoạt động bằng cách chỉ kích hoạt một tập hợp con các mạng con "chuyên gia" cho mỗi đầu vào, làm cho nó hiệu quả cao đối với các mô hình quy mô lớn như LLM (ví dụ: Mistral, DeepSeek). Cấu trúc của nó bao gồm: Đầu vào → Bộ định tuyến → Các chuyên gia hàng đầu được chọn → Xử lý chuyên gia → Đầu ra có trọng số.
+
+INFO:     127.0.0.1:51790 - "POST /chat_with_file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48902 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 4 clusters.
+An error occurred while building raptor tree: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7f0e831869c0>; the handler is closed
+An error occurred during initialization: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7f0e831869c0>; the handler is closed
+INFO:     127.0.0.1:60800 - "POST /upload_pdf/ HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/app.py", line 112, in upload_pdf
+    custom_velociraptor = RAPTOR(
+                          ^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/raptor_query.py", line 41, in __init__
+    self.retriever = self.build_raptor_tree()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/raptor_query.py", line 54, in build_raptor_tree
+    raptor_pack = RaptorPack(
+                  ^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 358, in __init__
+    self.retriever = RaptorRetriever(
+                     ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 139, in __init__
+    asyncio.run(self.insert(documents))
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 195, in insert
+    summaries_per_cluster = await self.summary_module.generate_summaries(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 100, in generate_summaries
+    responses.append(await job)
+                     ^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/response_synthesizers/base.py", line 306, in asynthesize
+    response_str = await self.aget_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/response_synthesizers/tree_summarize.py", line 86, in aget_response
+    response = await self._llm.apredict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/llms/llm.py", line 694, in apredict
+    chat_response = await self.achat(messages)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/llms/callbacks.py", line 75, in wrapped_async_llm_chat
+    f_return_val = await f(_self, messages, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/llms/google_genai/base.py", line 255, in achat
+    response = await chat.send_message(next_msg.parts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/chats.py", line 421, in send_message
+    response = await self._modules.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/models.py", line 6489, in generate_content
+    response = await self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/models.py", line 5491, in _generate_content
+    response_dict = await self._api_client.async_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/_api_client.py", line 760, in async_request
+    result = await self._async_request(http_request=http_request, stream=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/_api_client.py", line 697, in _async_request
+    response = await self._async_httpx_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 229, in handle_async_request
+    await self._close_connections(closing)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 173, in aclose
+    await self._connection.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_backends/anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/streams/tls.py", line 216, in aclose
+    await self.transport_stream.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1310, in aclose
+    self._transport.write_eof()
+  File "uvloop/handles/stream.pyx", line 703, in uvloop.loop.UVStream.write_eof
+  File "uvloop/handles/handle.pyx", line 159, in uvloop.loop.UVHandle._ensure_alive
+RuntimeError: unable to perform operation on <TCPTransport closed=True reading=False 0x7f0e831869c0>; the handler is closed
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 4 clusters.
+Level 0 created summaries/clusters: 4
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:50744 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'models/config.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [83040]
+INFO:     Started server process [87584]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:60028 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 4 clusters.
+Level 0 created summaries/clusters: 4
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:56062 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+Mixture of Experts (MoE) là một kiến trúc mạng nơ-ron được thiết kế để tăng dung lượng mô hình mà không làm tăng tỷ lệ tính toán. Nó hoạt động bằng cách chỉ kích hoạt một tập hợp con các mạng con "chuyên gia" cho mỗi đầu vào, làm cho nó rất hiệu quả đối với các mô hình quy mô lớn như LLM (ví dụ: Mistral, DeepSeek).
+
+Cấu trúc của nó là: Đầu vào → Bộ định tuyến → Các chuyên gia hàng đầu được chọn → Xử lý chuyên gia → Đầu ra có trọng số.
+Ví dụ:
+Các mã thông báo đầu vào: [Mã thông báo 1, Mã thông báo 2, Mã thông báo 3]
+Bộ định tuyến: [Chuyên gia 1: 0,7, Chuyên gia 3: 0,3] (Mã thông báo 1), [Chuyên gia 2: 0,9, Chuyên gia 1: 0,1] (Mã thông báo 2), [Chuyên gia 3: 0,6, Chuyên gia 2: 0,4] (Mã thông báo 3)
+Các chuyên gia: Chuyên gia 1 xử lý Mã thông báo 1 (trọng số = 0,7) + Mã thông báo 2 (trọng số = 0,1), Chuyên gia 2 xử lý Mã thông báo 2 (trọng số = 0,9) + Mã thông báo 3 (trọng số = 0,4), Chuyên gia 3 xử lý Mã thông báo 1 (trọng số = 0,3) + Mã thông báo 3 (trọng số = 0,6)
+Đầu ra: Tổng trọng số của đầu ra của chuyên gia trên mỗi mã thông báo.
+
+INFO:     127.0.0.1:42096 - "POST /chat_with_file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53422 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 5 clusters.
+An error occurred while building raptor tree: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7fcbcb0c8db0>; the handler is closed
+An error occurred during initialization: %s unable to perform operation on <TCPTransport closed=True reading=False 0x7fcbcb0c8db0>; the handler is closed
+INFO:     127.0.0.1:53422 - "POST /upload_pdf/ HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/app.py", line 112, in upload_pdf
+    custom_velociraptor = RAPTOR(
+                          ^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/raptor_query.py", line 41, in __init__
+    self.retriever = self.build_raptor_tree()
+                     ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/raptor_query.py", line 54, in build_raptor_tree
+    raptor_pack = RaptorPack(
+                  ^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 358, in __init__
+    self.retriever = RaptorRetriever(
+                     ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 139, in __init__
+    asyncio.run(self.insert(documents))
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 195, in insert
+    summaries_per_cluster = await self.summary_module.generate_summaries(
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/packs/raptor/base.py", line 100, in generate_summaries
+    responses.append(await job)
+                     ^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/response_synthesizers/base.py", line 306, in asynthesize
+    response_str = await self.aget_response(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/response_synthesizers/tree_summarize.py", line 86, in aget_response
+    response = await self._llm.apredict(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/llms/llm.py", line 694, in apredict
+    chat_response = await self.achat(messages)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/instrumentation/dispatcher.py", line 368, in async_wrapper
+    result = await func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/core/llms/callbacks.py", line 75, in wrapped_async_llm_chat
+    f_return_val = await f(_self, messages, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/llama_index/llms/google_genai/base.py", line 255, in achat
+    response = await chat.send_message(next_msg.parts)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/chats.py", line 421, in send_message
+    response = await self._modules.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/models.py", line 6489, in generate_content
+    response = await self._generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/models.py", line 5491, in _generate_content
+    response_dict = await self._api_client.async_request(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/_api_client.py", line 760, in async_request
+    result = await self._async_request(http_request=http_request, stream=False)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/google/genai/_api_client.py", line 697, in _async_request
+    response = await self._async_httpx_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1540, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1629, in send
+    response = await self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1657, in _send_handling_auth
+    response = await self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1694, in _send_handling_redirects
+    response = await self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_client.py", line 1730, in _send_single_request
+    response = await transport.handle_async_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpx/_transports/default.py", line 394, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 256, in handle_async_request
+    raise exc from None
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 229, in handle_async_request
+    await self._close_connections(closing)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/connection.py", line 173, in aclose
+    await self._connection.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_async/http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/httpcore/_backends/anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/streams/tls.py", line 216, in aclose
+    await self.transport_stream.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1310, in aclose
+    self._transport.write_eof()
+  File "uvloop/handles/stream.pyx", line 703, in uvloop.loop.UVStream.write_eof
+  File "uvloop/handles/handle.pyx", line 159, in uvloop.loop.UVHandle._ensure_alive
+RuntimeError: unable to perform operation on <TCPTransport closed=True reading=False 0x7fcbcb0c8db0>; the handler is closed
+WARNING:  WatchFiles detected changes in 'models/raptor_query.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [87584]
+INFO:     Started server process [89897]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+Mixture of Experts (MoE) là một kiến trúc mạng nơ-ron được thiết kế để tăng khả năng của mô hình mà không làm tăng tỷ lệ tính toán. Nó hoạt động bằng cách chỉ kích hoạt một tập hợp con các mạng con "chuyên gia" cho mỗi đầu vào, làm cho nó rất hiệu quả đối với các mô hình quy mô lớn như LLM (ví dụ: Mistral, DeepSeek).
+
+Cấu trúc của nó là: Đầu vào → Bộ định tuyến → Các chuyên gia hàng đầu được chọn → Xử lý chuyên gia → Đầu ra có trọng số.
+Ví dụ:
+Các mã thông báo đầu vào: [Mã thông báo 1, Mã thông báo 2, Mã thông báo 3]
+Bộ định tuyến: [Chuyên gia 1: 0,7, Chuyên gia 3: 0,3] (Mã thông báo 1), [Chuyên gia 2: 0,9, Chuyên gia 1: 0,1] (Mã thông báo 2), [Chuyên gia 3: 0,6, Chuyên gia 2: 0,4] (Mã thông báo 3)
+Các chuyên gia: Chuyên gia 1 xử lý Mã thông báo 1 (trọng số=0,7) + Mã thông báo 2 (trọng số=0,1), Chuyên gia 2 xử lý Mã thông báo 2 (trọng số=0,9) + Mã thông báo 3 (trọng số=0,4), Chuyên gia 3 xử lý Mã thông báo 1 (trọng số=0,3) + Mã thông báo 3 (trọng số=0,6)
+Đầu ra: Tổng trọng số của đầu ra của chuyên gia trên mỗi mã thông báo.
+
+INFO:     127.0.0.1:53668 - "POST /chat_with_file HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'models/raptor_query.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [89897]
+INFO:     Started server process [92786]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+Mixture of Experts (MoE) là một kiến trúc mạng nơ-ron được thiết kế để tăng dung lượng mô hình mà không làm tăng tỷ lệ tính toán. Nó hoạt động bằng cách chỉ kích hoạt một tập hợp con các mạng con "chuyên gia" cho mỗi đầu vào, làm cho nó rất hiệu quả đối với các mô hình quy mô lớn như LLM (ví dụ: Mistral, DeepSeek).
+
+Cấu trúc của nó là: Đầu vào → Bộ định tuyến → Các chuyên gia hàng đầu được chọn → Xử lý chuyên gia → Đầu ra có trọng số.
+Ví dụ:
+Các mã thông báo đầu vào: [Mã thông báo 1, Mã thông báo 2, Mã thông báo 3]
+Bộ định tuyến: [Chuyên gia 1: 0,7, Chuyên gia 3: 0,3] (Mã thông báo 1), [Chuyên gia 2: 0,9, Chuyên gia 1: 0,1] (Mã thông báo 2), [Chuyên gia 3: 0,6, Chuyên gia 2: 0,4] (Mã thông báo 3)
+Các chuyên gia: Chuyên gia 1 xử lý Mã thông báo 1 (trọng số = 0,7) + Mã thông báo 2 (trọng số = 0,1), Chuyên gia 2 xử lý Mã thông báo 2 (trọng số = 0,9) + Mã thông báo 3 (trọng số = 0,4), Chuyên gia 3 xử lý Mã thông báo 1 (trọng số = 0,3) + Mã thông báo 3 (trọng số = 0,6)
+Đầu ra: Tổng trọng số của đầu ra của chuyên gia trên mỗi mã thông báo.
+
+INFO:     127.0.0.1:34822 - "POST /chat_with_file HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 5 clusters.
+Level 0 created summaries/clusters: 5
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:48840 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+WARNING:  WatchFiles detected changes in 'models/config.py', 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [92786]
+INFO:     Started server process [96967]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+[Tue May  6 02:42:17 PM +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [96967]
+INFO:     Stopping reloader process [81956]
+[Tue May  6 02:42:17 PM +07 2025] Uvicorn stopped.
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 3 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+[Tue May  6 06:12:32 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [9474] using WatchFiles
+INFO:     Started server process [9507]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:56232 - "GET /docs HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56232 - "GET /openapi.json HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:36138 - "POST /chat_with_file HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/protocols/http/httptools_impl.py", line 409, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/middleware/proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/applications.py", line 112, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 187, in __call__
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 93, in __call__
+    await self.simple_response(scope, receive, send, request_headers=headers)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/cors.py", line 144, in simple_response
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 301, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/starlette/concurrency.py", line 37, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 2470, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 967, in run
+    result = context.run(func, *args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/app.py", line 84, in chat_with_file
+    bot_response = get_chatbot_response_from_file(user_input, user_id, file_paths)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/chat.py", line 174, in get_chatbot_response_from_file
+    custom_raptor_tool = init_custom_raptor_tool(user_id)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/chat.py", line 80, in init_custom_raptor_tool
+    custom_velociraptor = RAPTOR(
+                          ^^^^^^^
+TypeError: RAPTOR.__init__() missing 1 required positional argument: 'llm'
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [9507]
+Process SpawnProcess-2:
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/server.py", line 66, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 190, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/server.py", line 70, in serve
+    await self._serve(sockets)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/server.py", line 77, in _serve
+    config.load()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/config.py", line 435, in load
+    self.loaded_app = import_from_string(self.app)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/uvicorn/importer.py", line 19, in import_from_string
+    module = importlib.import_module(module_str)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/media/ldmt/Data/Projects/HCAI_Edu/app.py", line 4, in <module>
+    from models.chat import get_chatbot_response
+  File "/media/ldmt/Data/Projects/HCAI_Edu/models/chat.py", line 83
+    llm=get_llm()
+        ^^^^^^^^^
+SyntaxError: invalid syntax. Perhaps you forgot a comma?
+WARNING:  WatchFiles detected changes in 'models/chat.py'. Reloading...
+INFO:     Started server process [11569]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+Mixture of Experts (MoE) là một kiến trúc mạng nơ-ron được thiết kế để tăng dung lượng mô hình mà không làm tăng tỷ lệ tính toán. Nó hoạt động bằng cách chỉ kích hoạt một tập hợp con các mạng con "chuyên gia" cho mỗi đầu vào, làm cho nó rất hiệu quả đối với các mô hình quy mô lớn như LLM (ví dụ: Mistral, DeepSeek). Cấu trúc của nó là: Đầu vào → Bộ định tuyến → Các chuyên gia hàng đầu được chọn → Xử lý chuyên gia → Đầu ra có trọng số.
+INFO:     127.0.0.1:47862 - "POST /chat_with_file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43942 - "OPTIONS /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43942 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+Mixture of Experts (MoE) is a neural network architecture that increases model capacity without proportionally increasing computation. It activates only a subset of "expert" sub-networks for each input, making it efficient for large-scale models. The structure is as follows: Input → Router → Top-k Experts Selected → Expert Processing → Weighted Output. An example of this is: Input Tokens: [Token1, Token2, Token3] which are routed to different experts with different weights. The experts then process the tokens and the output is a weighted sum of expert outputs per token.
+
+INFO:     127.0.0.1:39828 - "POST /chat_with_file HTTP/1.1" 200 OK
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 5 clusters.
+Level 0 created summaries/clusters: 5
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:53808 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+The provided document describes matrix multiplication for GPU programming, defining the dimensions of matrices A, B, and C, and explaining how each element C[i][j] is computed as the dot product of the i-th row of A and the j-th column of B. However, it does not specify multiple ways to calculate matrix multiplication using GPUs.
+
+INFO:     127.0.0.1:37196 - "POST /chat_with_file HTTP/1.1" 200 OK
+full_paths ['models/uploaded_files/Super IELTS Writing Tasks 1 - bản mini xem trước thử - IELTS Fighter biên soạn.pdf']
+Initializing RAPTOR with collection_name: %s edubot_raptor
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+CUSTOM RAPTOR INTENT
+The task involves porting CUDA implementations to HIP, creating an optimized version, benchmarking all implementations, and writing a report. Examples of matrix multiplication are provided at a given URL.
+
+INFO:     127.0.0.1:52914 - "POST /chat_with_file HTTP/1.1" 200 OK
+INFO:     Shutting down
+[Tue May  6 06:22:18 PM +07 2025] Script interrupted. Shutting down.
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [11569]
+INFO:     Stopping reloader process [9474]
+[Tue May  6 06:22:18 PM +07 2025] Uvicorn stopped.
+/media/ldmt/Data/Projects/HCAI_Edu/conda_env/lib/python3.11/multiprocessing/resource_tracker.py:254: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

@@ -14,6 +14,7 @@ from models.user_files import get_user_DB
 def init_tool():
     # Create query engine
     # llm
+    llm = get_llm()
     llm_query_engine = LlmQueryEngine(llm_gemini=llm, prompt=DEFUALT_DIRECT_LLM_PROMPT)
 
     #sql rag
@@ -61,7 +62,7 @@ def init_tool():
 
 def init_raptor_tool():
     #RAPTOR
-    velociraptor = get_raptor(files=get_files(), force_rebuild=False)
+    velociraptor = get_raptor(files=get_files(),llm=get_llm(), force_rebuild=False)
     raptor_query_engine = velociraptor.query_engine
 
     #RAPTOR tool
@@ -73,33 +74,15 @@ def init_raptor_tool():
     return raptor_tool
 
 def init_custom_raptor_tool(user_id):
-    userDB = get_user_DB()
-
     # Get current files (from filesystem)
     cur_file_paths = os.listdir(os.path.join("models", "uploaded_files", user_id)) or []
 
-    # Get last recorded files (from database)
-    last_file_paths = userDB.get_user_files(user_id) or []
-
-    # Compare file paths ignoring order
-    if set(last_file_paths) == set(cur_file_paths):
-        custom_velociraptor = RAPTOR(
-            files=get_files_user(user_id, cur_file_paths),
-            collection_name=user_id,
-            force_rebuild=False
-        )
-    else:
-        print(
-            f"User {user_id} has uploaded new files: {cur_file_paths}."
-            f"Rebuilding RAPTOR collection...")
-
-        custom_velociraptor = RAPTOR(
-            files=get_files_user(user_id, cur_file_paths),
-            collection_name=user_id,
-            force_rebuild=True
-        )
-        userDB.insert_user_files(user_id, cur_file_paths)
-
+    custom_velociraptor = RAPTOR(
+        files=get_files_user(user_id, cur_file_paths),
+        collection_name=user_id,
+        llm=get_llm(),
+        force_rebuild=False
+    )
 
     custom_raptor_tool = QueryEngineTool.from_defaults(
         query_engine=custom_velociraptor.query_engine,
