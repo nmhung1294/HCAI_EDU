@@ -1,10 +1,22 @@
-import chromadb
-from models.user_files import get_user_DB
+from freedictionaryapi.clients.sync_client import DictionaryApiClient
+words = ['Cumulative', 'Dog', 'Cat']
+with DictionaryApiClient() as client:
+    for word in words:
+        try:
+            parser = client.fetch_parser(word)
+            meaning = {
+                'Definitions': [v for v in parser.get_all_definitions() if v],
+                'Synonyms': [v for v in parser.get_all_synonyms() if v],
+                'Examples': [v for v in parser.get_all_examples() if v],
+            }
 
-#clean
+            parts = []
+            for key, values in meaning.items():
+                value_str = '; '.join(values) if values else 'None'
+                parts.append(f"{key}: {value_str}")
 
-client = chromadb.PersistentClient(path="chroma_db")
-client.delete_collection('IuLAyPWiZwV4unB2TdXqvXpyXup1')
+            final_str = f"Word: {parser.word.word} | " + ' | '.join(parts)
+            print(final_str)
 
-user_db = get_user_DB()
-user_db.delete_all_users()
+        except Exception as e:
+            print(f"Word: {word} | Error: {e}")

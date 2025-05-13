@@ -36,9 +36,9 @@ class RAPTOR:
             self.vector_store = ChromaVectorStore(chroma_collection=self.collection)
 
             print("Loading provided documents...")
-            self.documents = SimpleDirectoryReader(input_files=files).load_data()
 
             if force_rebuild or len(os.listdir("chroma_db")) == 1:
+                self.documents = SimpleDirectoryReader(input_files=files).load_data()
                 self.retriever = self.build_raptor_tree()
             #How to wait for retriever is done ?
 

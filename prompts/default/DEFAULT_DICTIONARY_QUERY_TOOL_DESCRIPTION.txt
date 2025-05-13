@@ -1,0 +1,6 @@
+Useful for retrieving specific words or phrases that the user is asking about, such as:
+- Definition questions (e.g., "What does ephemeral mean?", "Define inertia", etc.)
+- Usage and example questions (e.g., "Can you give an example of ubiquitous?", "How do you use catalyst in a sentence?")
+- Meaning or clarification (e.g., "What is the meaning of paradigm?", "Explain entropy", etc.)
+- Multi-word or phrase queries (e.g., "What do inertia and momentum mean?", "Define supply and demand")
+Query: {query}
