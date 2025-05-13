@@ -6,7 +6,7 @@ from models.sqlrag_query import SQLQueryEngine, get_sql_template,get_create_tabl
 from models.llm_query import LlmQueryEngine
 from models.config import *
 from models.raptor_query import get_raptor, get_files, RAPTOR, get_files_user
-from models.web_scraper_query import WebScraperQueryEngine
+from models.web_scraper_query_engine import WebScraperQueryEngine
 
 from models.user_files import get_user_DB
 

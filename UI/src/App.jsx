@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from
 import theme from './theme';
 import ChatContainer from './components/Chat/ChatContainer';
 import Login from './components/Auth/Login';
+import IELTSVocabularyQuery from './components/IELTSVocabularyQuery';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { loadFirebaseCredentials, validateCredentials } from './utils/credentialsLoader';
 import { initializeFirebase } from './services/firebaseService';
@@ -192,6 +193,14 @@ function App() {
                 element={
                   <ProtectedRoute>
                     <ChatContainer />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/ielts-vocabulary"
+                element={
+                  <ProtectedRoute>
+                    <IELTSVocabularyQuery />
                   </ProtectedRoute>
                 }
               />

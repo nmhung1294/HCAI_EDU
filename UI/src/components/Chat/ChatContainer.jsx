@@ -39,6 +39,8 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FolderIcon from '@mui/icons-material/Folder';
 import DeleteIcon from '@mui/icons-material/Delete';
 import ExportIcon from '@mui/icons-material/FileDownload';
+import TranslateIcon from '@mui/icons-material/Translate';
+import IELTSVocabularyQuery from '../IELTSVocabularyQuery';
 import FileUpload from '../FileUpload/FileUpload';
 import { format } from 'date-fns';
 import { vi } from 'date-fns/locale';
@@ -212,6 +214,7 @@ const LogoutConfirmDialog = ({ open, onClose, onConfirm }) => {
                 >
                     Hủy
                 </Button>
+
                 <Button
                     onClick={onConfirm}
                     variant="contained"
@@ -434,7 +437,20 @@ const ChatContainer = () => {
             </Box>
 
             <Divider sx={{ bgcolor: 'divider' }} />
-
+            <Button
+                    onClick={() => navigate('/ielts-vocabulary')}
+                    variant="contained"
+                    color="primary"
+                    sx={{
+                        boxShadow: '0 4px 12px rgba(14, 165, 233, 0.25)',
+                        '&:hover': {
+                            boxShadow: '0 6px 16px rgba(14, 165, 233, 0.30)',
+                        },
+                    }}
+                >
+                    Khám phá
+            </Button>
+            
             <Box sx={{ p: 2 }}>
                 <Box
                     onClick={handleClearChat}
@@ -546,7 +562,6 @@ const ChatContainer = () => {
                     </ListItem>
                 )}
             </List>
-
             <Divider sx={{ bgcolor: 'divider', mt: 'auto' }} />
 
             <List sx={{ pt: 0 }}>
@@ -672,6 +687,20 @@ const ChatContainer = () => {
                                 <FolderIcon fontSize="small" />
                             </IconButton>
                         </Tooltip>
+                        {/* <Tooltip title="Khám phá">
+                            <IconButton
+                                size="small"
+                                onClick={() => navigate('/ielts-vocabulary')}
+                                sx={{
+                                    color: 'text.light',
+                                    '&:hover': {
+                                        color: 'primary.main'
+                                    }
+                                }}
+                            >
+                                <TranslateIcon fontSize="small" />
+                            </IconButton>
+                        </Tooltip> */}
                         <Tooltip title="Tùy chọn">
                             <IconButton
                                 onClick={handleMenuOpen}
@@ -701,6 +730,12 @@ const ChatContainer = () => {
                                 </ListItemIcon>
                                 <ListItemText>Cuộc trò chuyện mới</ListItemText>
                             </MenuItem>
+                            {/* <MenuItem onClick={() => navigate('/ielts-vocabulary')}>
+                                <ListItemIcon sx={{ color: 'text.light' }}>
+                                    <TranslateIcon fontSize="small" />
+                                </ListItemIcon>
+                                <ListItemText>Khám phá</ListItemText>
+                            </MenuItem> */}
                             <MenuItem
                                 onClick={refreshSavedChats}
                             >
