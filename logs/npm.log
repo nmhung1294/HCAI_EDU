@@ -1,64 +1,16 @@
-[Sun May  4 04:58:04 AM +07 2025] Starting npm dev...
+[Tue May 13 10:12:30 AM +07 2025] Starting npm dev...
 
 > hcai-frontend@0.0.0 dev
 > vite
 
 
-  VITE v6.3.3  ready in 228 ms
+  VITE v6.3.3  ready in 499 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
-[Sun May  4 04:59:38 AM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 04:59:38 AM +07 2025] npm dev stopped.
-[Sun May  4 05:11:53 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 523 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 05:13:07 AM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 05:13:07 AM +07 2025] npm dev stopped.
-[Sun May  4 05:46:02 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 476 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 05:46:05 AM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 05:46:05 AM +07 2025] npm dev stopped.
-[Sun May  4 05:46:12 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 303 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 05:49:27 AM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 05:49:27 AM +07 2025] npm dev stopped.
-[Sun May  4 05:49:30 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 530 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 05:50:50 AM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 05:50:50 AM +07 2025] npm dev stopped.
-[Sun May  4 05:50:51 AM +07 2025] Starting npm dev...
+[Tue May 13 10:17:55 AM +07 2025] Script interrupted. Shutting down.
+[Tue May 13 10:17:55 AM +07 2025] npm dev stopped.
+[Tue May 13 10:17:56 AM +07 2025] Starting npm dev...
 
 > hcai-frontend@0.0.0 dev
 > vite
@@ -68,297 +20,29 @@
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
-[Sun May  4 05:52:39 AM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 05:52:39 AM +07 2025] npm dev stopped.
-[Sun May  4 05:52:42 AM +07 2025] Starting npm dev...
+[Tue May 13 10:18:01 AM +07 2025] Script interrupted. Shutting down.
+[Tue May 13 10:18:01 AM +07 2025] npm dev stopped.
+[Tue May 13 10:18:02 AM +07 2025] Starting npm dev...
 
 > hcai-frontend@0.0.0 dev
 > vite
 
 
-  VITE v6.3.3  ready in 213 ms
+  VITE v6.3.3  ready in 506 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
-[Sun May  4 05:52:49 AM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 05:52:49 AM +07 2025] npm dev stopped.
-[Sun May  4 05:53:04 AM +07 2025] Starting npm dev...
+[Tue May 13 10:18:27 AM +07 2025] Script interrupted. Shutting down.
+[Tue May 13 10:18:27 AM +07 2025] npm dev stopped.
+[Tue May 13 10:18:56 AM +07 2025] Starting npm dev...
 
 > hcai-frontend@0.0.0 dev
 > vite
 
 
-  VITE v6.3.3  ready in 227 ms
+  VITE v6.3.3  ready in 489 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
-[Sun May  4 05:54:43 AM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 05:54:43 AM +07 2025] npm dev stopped.
-[Sun May  4 08:46:43 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 604 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 08:47:37 PM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 08:47:37 PM +07 2025] npm dev stopped.
-[Sun May  4 08:47:38 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 832 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 08:48:58 PM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 08:48:58 PM +07 2025] npm dev stopped.
-[Sun May  4 08:51:43 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 541 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 09:06:50 PM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 09:06:50 PM +07 2025] npm dev stopped.
-[Sun May  4 09:11:28 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 534 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 09:25:49 PM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 09:25:49 PM +07 2025] npm dev stopped.
-[Sun May  4 09:25:50 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 528 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 09:26:40 PM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 09:26:40 PM +07 2025] npm dev stopped.
-[Sun May  4 09:26:42 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 565 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 09:31:26 PM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 09:31:26 PM +07 2025] npm dev stopped.
-[Sun May  4 09:34:15 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 561 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 09:37:25 PM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 09:37:25 PM +07 2025] npm dev stopped.
-[Sun May  4 09:41:11 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 890 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Sun May  4 09:47:21 PM +07 2025] Script interrupted. Shutting down.
-[Sun May  4 09:47:21 PM +07 2025] npm dev stopped.
-[Mon May  5 10:52:23 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 807 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Mon May  5 11:08:49 AM +07 2025] Script interrupted. Shutting down.
-[Mon May  5 11:08:49 AM +07 2025] npm dev stopped.
-[Tue May  6 01:35:48 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 501 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May  6 01:39:35 PM +07 2025] Script interrupted. Shutting down.
-[Tue May  6 01:39:35 PM +07 2025] npm dev stopped.
-[Tue May  6 02:05:02 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 268 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May  6 02:42:17 PM +07 2025] Script interrupted. Shutting down.
-[Tue May  6 02:42:17 PM +07 2025] npm dev stopped.
-[Tue May  6 06:12:32 PM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 597 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May  6 06:22:18 PM +07 2025] Script interrupted. Shutting down.
-[Tue May  6 06:22:18 PM +07 2025] npm dev stopped.
-[Tue May  6 23:18:46 +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 239 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May  6 23:33:41 +07 2025] Script interrupted. Shutting down.
-[Tue May  6 23:33:41 +07 2025] npm dev stopped.
-[Tue May 13 06:56:26 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 609 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May 13 06:56:56 AM +07 2025] Script interrupted. Shutting down.
-[Tue May 13 06:56:56 AM +07 2025] npm dev stopped.
-[Tue May 13 07:22:08 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 188 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-7:23:11 AM [vite] (client) Pre-transform error: Failed to resolve import "../../google_credentials.json" from "src/utils/credentialsLoader.js". Does the file exist?
-  Plugin: vite:import-analysis
-  File: /home/ldmt/Projects/HCAI_Edu/UI/src/utils/credentialsLoader.js:20:38
-  18 |      
-  19 |      // Cho demo, chúng ta sẽ import trực tiếp
-  20 |      const credentials = await import('../../google_credentials.json');
-     |                                       ^
-  21 |      return credentials.default || credentials;
-  22 |    } catch (error) {
-7:23:11 AM [vite] Internal server error: Failed to resolve import "../../google_credentials.json" from "src/utils/credentialsLoader.js". Does the file exist?
-  Plugin: vite:import-analysis
-  File: /home/ldmt/Projects/HCAI_Edu/UI/src/utils/credentialsLoader.js:20:38
-  18 |      
-  19 |      // Cho demo, chúng ta sẽ import trực tiếp
-  20 |      const credentials = await import('../../google_credentials.json');
-     |                                       ^
-  21 |      return credentials.default || credentials;
-  22 |    } catch (error) {
-      at TransformPluginContext._formatLog (file:///home/ldmt/Projects/HCAI_Edu/UI/node_modules/vite/dist/node/chunks/dep-BMIURPaQ.js:42451:41)
-      at TransformPluginContext.error (file:///home/ldmt/Projects/HCAI_Edu/UI/node_modules/vite/dist/node/chunks/dep-BMIURPaQ.js:42448:16)
-      at normalizeUrl (file:///home/ldmt/Projects/HCAI_Edu/UI/node_modules/vite/dist/node/chunks/dep-BMIURPaQ.js:40427:23)
-      at async file:///home/ldmt/Projects/HCAI_Edu/UI/node_modules/vite/dist/node/chunks/dep-BMIURPaQ.js:40546:37
-      at async Promise.all (index 0)
-      at async TransformPluginContext.transform (file:///home/ldmt/Projects/HCAI_Edu/UI/node_modules/vite/dist/node/chunks/dep-BMIURPaQ.js:40473:7)
-      at async EnvironmentPluginContainer.transform (file:///home/ldmt/Projects/HCAI_Edu/UI/node_modules/vite/dist/node/chunks/dep-BMIURPaQ.js:42246:18)
-      at async loadAndTransform (file:///home/ldmt/Projects/HCAI_Edu/UI/node_modules/vite/dist/node/chunks/dep-BMIURPaQ.js:35698:27)
-      at async viteTransformMiddleware (file:///home/ldmt/Projects/HCAI_Edu/UI/node_modules/vite/dist/node/chunks/dep-BMIURPaQ.js:37202:24)
-7:23:38 AM [vite] (client) hmr update /src/App.jsx
-[Tue May 13 07:23:40 AM +07 2025] Script interrupted. Shutting down.
-[Tue May 13 07:23:40 AM +07 2025] npm dev stopped.
-[Tue May 13 07:23:41 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 419 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May 13 07:27:00 AM +07 2025] Script interrupted. Shutting down.
-[Tue May 13 07:27:00 AM +07 2025] npm dev stopped.
-[Tue May 13 07:27:33 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 463 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May 13 07:29:28 AM +07 2025] Script interrupted. Shutting down.
-[Tue May 13 07:29:29 AM +07 2025] npm dev stopped.
-[Tue May 13 07:29:31 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 441 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May 13 07:30:35 AM +07 2025] Script interrupted. Shutting down.
-[Tue May 13 07:30:35 AM +07 2025] npm dev stopped.
-[Tue May 13 07:30:50 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 328 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May 13 07:32:25 AM +07 2025] Script interrupted. Shutting down.
-[Tue May 13 07:32:25 AM +07 2025] npm dev stopped.
-[Tue May 13 07:32:26 AM +07 2025] Starting npm dev...
-
-> hcai-frontend@0.0.0 dev
-> vite
-
-
-  VITE v6.3.3  ready in 533 ms
-
-  ➜  Local:   http://localhost:5173/
-  ➜  Network: use --host to expose
-[Tue May 13 07:33:21 AM +07 2025] Script interrupted. Shutting down.
-[Tue May 13 07:33:21 AM +07 2025] npm dev stopped.
+[Tue May 13 10:20:21 AM +07 2025] Script interrupted. Shutting down.
+[Tue May 13 10:20:21 AM +07 2025] npm dev stopped.

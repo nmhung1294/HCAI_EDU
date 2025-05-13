@@ -1,5 +1,0 @@
-Useful for retrieving specific context based on files the user has uploaded, such as:
-- Content analysis (summarizing documents, extracting key information, identifying errors or inconsistencies, etc.)
-- Task support (reviewing written responses, checking data formats, providing suggestions or improvements, etc.)
-- File-based questions (e.g., "Based on the file I uploaded, what can be improved?", "Can you summarize this document?", "What does this data mean?", etc.)
-Query: {query}

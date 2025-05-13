@@ -7,6 +7,7 @@ from models.llm_query import LlmQueryEngine
 from models.config import *
 from models.raptor_query import get_raptor, get_files, RAPTOR, get_files_user
 from models.web_scraper_query import WebScraperQueryEngine
+from models.dictionary_query import DictionaryQueryEngine
 
 
 def init_tool():
@@ -56,7 +57,14 @@ def init_tool():
         description=DEFAULT_WEB_SCRAPER_QUERY_TOOL_DESCRIPTION
     )
 
-    return llm_tool, sql_rag_tool, web_scraper_tool
+    dictionary_engine = DictionaryQueryEngine(llm=llm)
+    dictionary_tool = QueryEngineTool.from_defaults(
+        query_engine=dictionary_engine,
+        name='dictionary_tool',
+        description=DEFAULT_DICTIONARY_QUERY_TOOL_DESCRIPTION
+    )
+
+    return llm_tool, sql_rag_tool, web_scraper_tool, dictionary_tool
 
 def init_raptor_tool():
     #RAPTOR
@@ -85,7 +93,7 @@ def init_custom_raptor_tool(user_id):
     return custom_velociraptor.query_engine
 
 
-llm_tool, sql_rag_tool, web_scraper_tool = init_tool()
+llm_tool, sql_rag_tool, web_scraper_tool, dictionary_tool = init_tool()
 
 def get_chatbot_response(user_prompt: str) -> str:
     """Generate a chatbot response based on the conversation context."""
@@ -96,7 +104,7 @@ def get_chatbot_response(user_prompt: str) -> str:
         selector=LLMSingleSelector.from_defaults(llm=llm),
         query_engine_tools=[llm_tool,
                             sql_rag_tool,
-                            # raptor_tool,
+                            dictionary_tool,
                             web_scraper_tool],
         llm=llm
     )
@@ -122,6 +130,25 @@ def get_chatbot_response(user_prompt: str) -> str:
         )
         return str(tailored_response)
     elif intent.index == 2:
+        print("DICTIONARY INTENT")
+        print(response)
+        tailored_response = llm.complete(
+            f"***Instructions for answering the user query:***\n"
+            f"Always make sure to answer in Vietnamese language, but do not translate the code snippets nor IT terms.\n"
+            f"You are a good professor and know how to explain things well to students of different levels. Student is asking you the following question:\n"
+            f"<LATEST USER QUERY>\n"
+            f"{user_prompt} \n"
+            f"<LATEST USER QUERY END>\n"
+            f"Answer the student directly.\n"
+            f"Use the following knowledge to answer the question:\n"
+            f"""
+            <KNOWLEDGE START>
+            {response}
+            <KNOWLEDGE END>
+            """
+        )
+        return str(tailored_response)
+    elif intent.index == 3:
         print("WEB SCRAPER INTENT")
         print(response)
         tailored_response = llm.complete(
@@ -135,7 +162,7 @@ def get_chatbot_response(user_prompt: str) -> str:
             """
         )
         return str(tailored_response)
-
+    print('Direct LLM')
     return str(response)
 
 
