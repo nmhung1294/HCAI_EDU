@@ -204,3 +204,125 @@ INFO:     Application shutdown complete.
 INFO:     Finished server process [148210]
 INFO:     Stopping reloader process [148202]
 [Tue May 13 10:20:21 AM +07 2025] Uvicorn stopped.
+[Tue May 13 05:08:24 PM +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/media/ldmt/Data/Projects/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [30780] using WatchFiles
+INFO:httpx:HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash "HTTP/1.1 200 OK"
+INFO:     Started server process [30789]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     127.0.0.1:55520 - "OPTIONS /delete_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55520 - "DELETE /delete_pdf/ HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash "HTTP/1.1 200 OK"
+INFO:chromadb.telemetry.product.posthog:Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+INFO:httpx:HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/sklearn/utils/deprecation.py:151: FutureWarning: 'force_all_finite' was renamed to 'ensure_all_finite' in 1.6 and will be removed in 1.8.
+  warnings.warn(
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Force rebuilding collection...
+Collection 'IuLAyPWiZwV4unB2TdXqvXpyXup1' does not exist. Skipping deletion.
+Loading provided documents...
+Creating RaptorPack and building raptor tree...
+Generating embeddings for level 0.
+Performing clustering for level 0.
+Generating summaries for level 0 with 5 clusters.
+Level 0 created summaries/clusters: 5
+Generating embeddings for level 1.
+Performing clustering for level 1.
+Generating summaries for level 1 with 1 clusters.
+Level 1 created summaries/clusters: 1
+Generating embeddings for level 2.
+Performing clustering for level 2.
+Generating summaries for level 2 with 1 clusters.
+Level 2 created summaries/clusters: 1
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+INFO:     127.0.0.1:47846 - "POST /upload_pdf/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55342 - "OPTIONS /chat_with_file HTTP/1.1" 200 OK
+INFO:httpx:HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash "HTTP/1.1 200 OK"
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-28' coro=<AsyncClient.aclose() done, defined at /media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/httpx/_client.py:1978> exception=RuntimeError('unable to perform operation on <TCPTransport closed=True reading=False 0x7f24bf3a3f90>; the handler is closed')>
+Traceback (most recent call last):
+  File "/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/httpx/_client.py", line 1985, in aclose
+    await self._transport.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/httpx/_transports/default.py", line 406, in aclose
+    await self._pool.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 353, in aclose
+    await self._close_connections(closing_connections)
+  File "/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/httpcore/_async/connection_pool.py", line 345, in _close_connections
+    await connection.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/httpcore/_async/connection.py", line 173, in aclose
+    await self._connection.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/httpcore/_async/http11.py", line 258, in aclose
+    await self._network_stream.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/httpcore/_backends/anyio.py", line 53, in aclose
+    await self._stream.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/anyio/streams/tls.py", line 216, in aclose
+    await self.transport_stream.aclose()
+  File "/media/ldmt/Data/Projects/HCAI_Edu/.venv/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 1310, in aclose
+    self._transport.write_eof()
+  File "uvloop/handles/stream.pyx", line 703, in uvloop.loop.UVStream.write_eof
+  File "uvloop/handles/handle.pyx", line 159, in uvloop.loop.UVHandle._ensure_alive
+RuntimeError: unable to perform operation on <TCPTransport closed=True reading=False 0x7f24bf3a3f90>; the handler is closed
+INFO:httpx:HTTP Request: POST https://api.cohere.com/v1/embed "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:google_genai.models:AFC remote call 1 is done.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:streamGenerateContent?alt=sse "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC remote call 1 is done.
+Initializing RAPTOR with collection_name: %s IuLAyPWiZwV4unB2TdXqvXpyXup1
+Loading provided documents...
+Setting up RaptorRetriever
+Setting up RetrieverQueryEngine
+Mixture of Experts (MoE) is a neural network architecture that increases model capacity without proportionally increasing computation. It activates only a subset of "expert" sub-networks for each input, making it efficient for large-scale models. The structure involves input, a router, selection of top-k experts, expert processing, and a weighted output.
+
+____________________
+INFO:     127.0.0.1:55342 - "POST /chat_with_file HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39044 - "OPTIONS /chat HTTP/1.1" 200 OK
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC remote call 1 is done.
+INFO:llama_index.core.query_engine.router_query_engine:Selecting query engine 2: The user is asking for the definition of the word "Dog", which falls under the category of definition questions as described in choice 3..
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC remote call 1 is done.
+INFO:freedictionaryapi.clients.sync_client:Client has been init-ed.
+INFO:freedictionaryapi.clients.base_sync_client:Send request to API with word 'Dog' and language code <LanguageCodes.ENGLISH_US: 'en_US'>. URL: 'https://api.dictionaryapi.dev/api/v2/entries/en_US/Dog'.
+INFO:httpx:HTTP Request: GET https://api.dictionaryapi.dev/api/v2/entries/en_US/Dog "HTTP/1.1 200 OK"
+INFO:freedictionaryapi.clients.base_client_interface:Response is successful [code=200] from url: https://api.dictionaryapi.dev/api/v2/entries/en_US/Dog.
+INFO:freedictionaryapi.clients.sync_client:Client has been closed.
+INFO:google_genai.models:AFC is enabled with max remote calls: 10.
+INFO:httpx:HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent "HTTP/1.1 200 OK"
+INFO:google_genai.models:AFC remote call 1 is done.
+Generated query: ["Dog"]
+
+Word list: ['Dog']
+Result: Word: dog | Definitions: A mammal, Canis familiaris or Canis lupus familiaris, that has been domesticated for thousands of years, of highly variable appearance due to human breeding.; Any member of the Family Canidae, including domestic dogs, wolves, coyotes, jackals, foxes, and their relatives (extant and extinct); canid.; A male dog, wolf or fox, as opposed to a bitch or vixen.; A dull, unattractive girl or woman.; A man (derived from definition 2).; A coward.; Someone who is morally reprehensible.; A sexually aggressive man (cf. horny).; Any of various mechanical devices for holding, gripping, or fastening something, particularly with a tooth-like projection.; A click or pallet adapted to engage the teeth of a ratchet-wheel, to restrain the back action; a click or pawl. (See also: ratchet, windlass); A metal support for logs in a fireplace.; The eighteenth Lenormand card.; A hot dog.; Underdog.; (almost always in the plural) Foot.; (from "dog and bone") Phone or mobile phone.; One of the cones used to divide up a racetrack when training horses.; A flop; a film that performs poorly at the box office.; To pursue with the intent to catch.; To follow in an annoying or harassing way.; To fasten a hatch securely.; To watch, or participate, in sexual activity in a public place.; To intentionally restrict one's productivity as employee; to work at the slowest rate that goes unpunished.; To criticize.; To divide (a watch) with a comrade.; Meat from a dog eaten as food.; Meat prepared to be given to a dog as food.; An insult intended to assert hyperbolically that another person has value only as a corpse to be fed to a dog. | Synonyms: None | Examples: The dog barked all night long.; She’s a real dog.; He's a silly dog.; Come back and fight, you dogs!; You dirty dog.; The dogs were too hot to touch.; My dog is dead.; The woman cursed him so that trouble would dog his every step.; It is very important to dog down these hatches...; I admit that I like to dog at my local country park.; A surprise inspection of the night shift found that some workers were dogging it.; We visited South Korea this time around, where we ate dog meat for the first time.; Did you just step on my blue suede shoes? You're dog meat now!
+
+DICTIONARY INTENT
+Word: dog | Definitions: A mammal, Canis familiaris or Canis lupus familiaris, that has been domesticated for thousands of years, of highly variable appearance due to human breeding.; Any member of the Family Canidae, including domestic dogs, wolves, coyotes, jackals, foxes, and their relatives (extant and extinct); canid.; A male dog, wolf or fox, as opposed to a bitch or vixen.; A dull, unattractive girl or woman.; A man (derived from definition 2).; A coward.; Someone who is morally reprehensible.; A sexually aggressive man (cf. horny).; Any of various mechanical devices for holding, gripping, or fastening something, particularly with a tooth-like projection.; A click or pallet adapted to engage the teeth of a ratchet-wheel, to restrain the back action; a click or pawl. (See also: ratchet, windlass); A metal support for logs in a fireplace.; The eighteenth Lenormand card.; A hot dog.; Underdog.; (almost always in the plural) Foot.; (from "dog and bone") Phone or mobile phone.; One of the cones used to divide up a racetrack when training horses.; A flop; a film that performs poorly at the box office.; To pursue with the intent to catch.; To follow in an annoying or harassing way.; To fasten a hatch securely.; To watch, or participate, in sexual activity in a public place.; To intentionally restrict one's productivity as employee; to work at the slowest rate that goes unpunished.; To criticize.; To divide (a watch) with a comrade.; Meat from a dog eaten as food.; Meat prepared to be given to a dog as food.; An insult intended to assert hyperbolically that another person has value only as a corpse to be fed to a dog. | Synonyms: None | Examples: The dog barked all night long.; She’s a real dog.; He's a silly dog.; Come back and fight, you dogs!; You dirty dog.; The dogs were too hot to touch.; My dog is dead.; The woman cursed him so that trouble would dog his every step.; It is very important to dog down these hatches...; I admit that I like to dog at my local country park.; A surprise inspection of the night shift found that some workers were dogging it.; We visited South Korea this time around, where we ate dog meat for the first time.; Did you just step on my blue suede shoes? You're dog meat now!
+
+INFO:     127.0.0.1:39044 - "POST /chat HTTP/1.1" 200 OK
