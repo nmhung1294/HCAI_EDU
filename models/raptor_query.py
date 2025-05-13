@@ -9,25 +9,27 @@ from llama_index.embeddings.cohere import CohereEmbedding
 from llama_index.core.query_engine import RetrieverQueryEngine
 import pandas as pd
 
-
+from fastapi.concurrency import run_in_threadpool
 
 import chromadb
 
 class RAPTOR:
-    def __init__(self, files, collection_name="edubot_raptor", force_rebuild=False):
+    def __init__(self, files, llm, collection_name="edubot_raptor", force_rebuild=False):
         self.files = files
         self.collection_name = collection_name
+        self.llm = llm
         # Set up logging
         print("Initializing RAPTOR with collection_name: %s", collection_name)
-
-        # start_time = time.time()
 
         try:
             self.client = chromadb.PersistentClient(path="chroma_db")
 
             if force_rebuild:
                 print("Force rebuilding collection...")
-                self.client.delete_collection(collection_name)
+                if collection_name in self.client.list_collections():
+                    self.client.delete_collection(collection_name)
+                else:
+                    print(f"Collection '{collection_name}' does not exist. Skipping deletion.")
 
             self.collection = self.client.get_or_create_collection(collection_name)
 
@@ -38,6 +40,7 @@ class RAPTOR:
 
             if force_rebuild or len(os.listdir("chroma_db")) == 1:
                 self.retriever = self.build_raptor_tree()
+            #How to wait for retriever is done ?
 
             self.retriever = self.setup_retriever()
             self.query_engine = self.setup_query_engine()
@@ -45,9 +48,6 @@ class RAPTOR:
             print("An error occurred during initialization: %s", e)
             raise
 
-        # end_time = time.time()
-        # setup_duration = end_time - start_time
-        # print("RAPTOR setup completed in %s seconds", setup_duration)
 
     def build_raptor_tree(self):
         try:
@@ -58,7 +58,7 @@ class RAPTOR:
                     model_name=EMBEDDING_MODEL,
                     api_key=cohere_api_key
                 ),  # Explicitly passing the API key
-                llm=llm,
+                llm=self.llm,
                 vector_store=self.vector_store,
                 similarity_top_k=SIMILARITY_TOP_K,
                 mode=RETRIEVAL_METHOD,
@@ -78,7 +78,7 @@ class RAPTOR:
                     model_name=EMBEDDING_MODEL,
                     api_key=cohere_api_key
                 ),  # Explicitly passing the API key
-                llm=llm,
+                llm=self.llm,
                 vector_store=self.vector_store,
                 similarity_top_k=SIMILARITY_TOP_K,
                 mode=RETRIEVAL_METHOD,
@@ -91,7 +91,7 @@ class RAPTOR:
         try:
             print("Setting up RetrieverQueryEngine")
             return RetrieverQueryEngine.from_args(
-                self.retriever, llm=llm,
+                self.retriever, llm=self.llm,
                 streaming=True
             )
         except Exception as e:
@@ -110,6 +110,13 @@ def get_files():
     return full_paths
 
 
-def get_raptor(files, force_rebuild=False):
-    velociraptor = RAPTOR(files=files, collection_name="edubot_raptor", force_rebuild=force_rebuild)
+def get_files_user(user_id, file_paths):
+    full_paths = [os.path.join(UPLOAD_DIR,user_id, file) for file in file_paths]
+    return full_paths
+
+
+def get_raptor(files, llm, force_rebuild=False):
+    velociraptor = RAPTOR(files=files,llm=llm, collection_name="edubot_raptor", force_rebuild=force_rebuild)
     return velociraptor
+
+

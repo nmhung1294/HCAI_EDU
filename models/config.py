@@ -31,6 +31,7 @@ DEFAULT_LLM_QUERY_TOOL_DESCRIPTION = read_prompt_file("./prompts/default/DEFAULT
 DEFUALT_SQL_RAG_QUERY_TOOL_DESCRIPTION = read_prompt_file("./prompts/default/DEFAULT_SQL_RAG_QUERY_TOOL_DESCRIPTION.txt")
 DEFAULT_RAPTOR_QUERY_TOOL_DESCRIPTION = read_prompt_file("./prompts/default/DEFAULT_RAPTOR_QUERY_TOOL_DESCRIPTION.txt")
 DEFAULT_WEB_SCRAPER_QUERY_TOOL_DESCRIPTION = read_prompt_file("./prompts/default/DEFAULT_WEB_SCRAPER_QUERY_TOOL_DESCRIPTION.txt")
+CUSTOM_RAPTOR_QUERY_TOOL_DESCRIPTION = read_prompt_file("./prompts/default/CUSTOM_RAPTOR_QUERY_TOOL_DESCRIPTION.txt")
 
 
 #RAPTOR
@@ -42,3 +43,5 @@ EMBEDDING_MODEL = "embed-multilingual-v3.0"
 selected_web_url = "https://ielts-fighter.com/tin-tuc.html"
 max_number_of_posts = 15
 
+def get_llm():
+    return GoogleGenAI(model="models/gemini-2.0-flash", google_api_key=google_api_key)
