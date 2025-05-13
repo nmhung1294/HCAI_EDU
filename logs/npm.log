@@ -56,3 +56,15 @@
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
+[Tue May 13 23:47:22 +07 2025] Starting npm dev...
+
+> hcai-frontend@0.0.0 dev
+> vite
+
+
+  VITE v6.3.3  ready in 282 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+[Tue May 13 23:47:41 +07 2025] Script interrupted. Shutting down.
+[Tue May 13 23:47:41 +07 2025] npm dev stopped.

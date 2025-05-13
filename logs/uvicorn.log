@@ -326,3 +326,20 @@ DICTIONARY INTENT
 Word: dog | Definitions: A mammal, Canis familiaris or Canis lupus familiaris, that has been domesticated for thousands of years, of highly variable appearance due to human breeding.; Any member of the Family Canidae, including domestic dogs, wolves, coyotes, jackals, foxes, and their relatives (extant and extinct); canid.; A male dog, wolf or fox, as opposed to a bitch or vixen.; A dull, unattractive girl or woman.; A man (derived from definition 2).; A coward.; Someone who is morally reprehensible.; A sexually aggressive man (cf. horny).; Any of various mechanical devices for holding, gripping, or fastening something, particularly with a tooth-like projection.; A click or pallet adapted to engage the teeth of a ratchet-wheel, to restrain the back action; a click or pawl. (See also: ratchet, windlass); A metal support for logs in a fireplace.; The eighteenth Lenormand card.; A hot dog.; Underdog.; (almost always in the plural) Foot.; (from "dog and bone") Phone or mobile phone.; One of the cones used to divide up a racetrack when training horses.; A flop; a film that performs poorly at the box office.; To pursue with the intent to catch.; To follow in an annoying or harassing way.; To fasten a hatch securely.; To watch, or participate, in sexual activity in a public place.; To intentionally restrict one's productivity as employee; to work at the slowest rate that goes unpunished.; To criticize.; To divide (a watch) with a comrade.; Meat from a dog eaten as food.; Meat prepared to be given to a dog as food.; An insult intended to assert hyperbolically that another person has value only as a corpse to be fed to a dog. | Synonyms: None | Examples: The dog barked all night long.; She’s a real dog.; He's a silly dog.; Come back and fight, you dogs!; You dirty dog.; The dogs were too hot to touch.; My dog is dead.; The woman cursed him so that trouble would dog his every step.; It is very important to dog down these hatches...; I admit that I like to dog at my local country park.; A surprise inspection of the night shift found that some workers were dogging it.; We visited South Korea this time around, where we ate dog meat for the first time.; Did you just step on my blue suede shoes? You're dog meat now!
 
 INFO:     127.0.0.1:39044 - "POST /chat HTTP/1.1" 200 OK
+[Tue May 13 23:47:22 +07 2025] Starting Uvicorn...
+INFO:     Will watch for changes in these directories: ['/home/ptthanh/cvdhd/HCAI/HCAI_Edu']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [8590] using WatchFiles
+INFO:httpx:HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: GET https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash "HTTP/1.1 200 OK"
+INFO:     Started server process [8599]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+[Tue May 13 23:47:41 +07 2025] Script interrupted. Shutting down.
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [8599]
+Tables in the database: dict_keys(['PJS_points', 'users'])
+INFO:     Stopping reloader process [8590]
+[Tue May 13 23:47:43 +07 2025] Uvicorn stopped.
