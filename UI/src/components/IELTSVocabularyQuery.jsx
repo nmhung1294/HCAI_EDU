@@ -196,7 +196,6 @@ const IELTSVocabularyQuery = () => {
 
     try {
       const data = await queryVocabulary(query, showUrlInput ? customUrl : null);
-
       // Add bot message
       const botMessage = {
         id: Date.now() + 1,
@@ -208,6 +207,7 @@ const IELTSVocabularyQuery = () => {
 
       // Set practice exercises from response
       if (data.practice_exercises) {
+        console.log('Practice exercises:', data.practice_exercises);
         setPracticeExercises(data.practice_exercises);
       }
     } catch (err) {
@@ -221,14 +221,61 @@ const IELTSVocabularyQuery = () => {
   };
 
   const handleAnswerChange = (type, index, value) => {
+    // Cập nhật câu trả lời của người dùng
     setUserAnswers(prev => ({
       ...prev,
       [`${type}_${index}`]: value
     }));
+
+    // Kiểm tra câu trả lời ngay lập tức nếu là phần Fill in Blank
+    if (type === 'fill_in_blank' && practiceExercises?.fill_in_blank) {
+      // Lấy câu trả lời đúng từ dữ liệu có sẵn
+      const correctAnswer = practiceExercises.fill_in_blank[index]?.correct_answer;
+      const isCorrect = value === correctAnswer;
+      const explanation = practiceExercises.fill_in_blank[index]?.explanation;
+
+      // Tạo kết quả tương tự như kết quả từ API
+      const results = {
+        results: {
+          fill_in_blank: practiceExercises.fill_in_blank.map((q, i) => {
+            // Chỉ cập nhật câu trả lời cho câu hỏi hiện tại
+            if (i === index) {
+              return {
+                is_correct: isCorrect,
+                correct_answer: correctAnswer,
+                user_answer: value,
+                explanation: explanation
+              };
+            }
+            // Giữ lại kết quả cũ cho các câu hỏi đã trả lời trước đó
+            else if (exerciseResults?.results?.fill_in_blank && exerciseResults.results.fill_in_blank[i]) {
+              return exerciseResults.results.fill_in_blank[i];
+            }
+            // Mặc định là null cho các câu chưa trả lời
+            return null;
+          }).filter(item => item !== null),
+          story_gap: exerciseResults?.results?.story_gap || []
+        },
+        score: 0, // Điểm số sẽ được cập nhật dưới đây
+        total_questions: practiceExercises.fill_in_blank.length +
+          (practiceExercises.story_gap?.gaps?.length || 0),
+        correct_answers: 0 // Số câu đúng sẽ được cập nhật dưới đây
+      };
+
+      // Tính số câu đúng và điểm số
+      const correctAnswers = results.results.fill_in_blank.filter(q => q?.is_correct).length;
+      results.correct_answers = correctAnswers;
+      results.score = (correctAnswers / results.total_questions) * 100;
+
+      // Cập nhật state với kết quả mới
+      setExerciseResults(results);
+      setShowResults(true);
+    }
   };
 
   const handleCheckAnswers = async () => {
     try {
+      console.log(practiceExercises)
       if (!practiceExercises?.exercise_id) {
         setSnackbar({
           open: true,
@@ -243,7 +290,6 @@ const IELTSVocabularyQuery = () => {
         'user123', // Replace with actual user ID
         userAnswers
       );
-
       setExerciseResults(results);
       setShowResults(true);
       setSnackbar({
@@ -299,13 +345,91 @@ const IELTSVocabularyQuery = () => {
     setSnackbar(prev => ({ ...prev, open: false }));
   };
 
+  const handleRefresh = () => {
+    // Reload current practice exercises without clearing the UI
+    if (practiceExercises) {
+      setUserAnswers({});
+      setShowResults(false);
+      setExerciseResults(null);
+      // Add animation effect
+      const practiceSection = document.querySelector('.MuiGrid-item:last-child');
+      if (practiceSection) {
+        practiceSection.style.animation = 'none';
+        setTimeout(() => {
+          practiceSection.style.animation = 'fadeInRefresh 0.5s ease';
+        }, 10);
+      }
+
+      setSnackbar({
+        open: true,
+        message: 'Exercise refreshed',
+        severity: 'success'
+      });
+    } else {
+      setSnackbar({
+        open: true,
+        message: 'No exercise to refresh',
+        severity: 'info'
+      });
+    }
+  };
+
+  // Handle key navigation for exercises
+  const handleKeyDown = (event, type, currentIndex, optionIndex) => {
+    if (type === 'fill_in_blank' && practiceExercises?.fill_in_blank) {
+      const options = practiceExercises.fill_in_blank[currentIndex]?.options || [];
+
+      // Handle keyboard navigation
+      switch (event.key) {
+        case 'ArrowUp':
+          if (optionIndex > 0) {
+            // Focus previous option
+            document.getElementById(`option-${currentIndex}-${optionIndex - 1}`)?.focus();
+          }
+          break;
+        case 'ArrowDown':
+          if (optionIndex < options.length - 1) {
+            // Focus next option
+            document.getElementById(`option-${currentIndex}-${optionIndex + 1}`)?.focus();
+          }
+          break;
+        case 'Enter':
+        case ' ':
+          // Select current option
+          handleAnswerChange(type, currentIndex, options[optionIndex]);
+          break;
+        case 'n':
+          // Go to next question
+          if (currentIndex < practiceExercises.fill_in_blank.length - 1) {
+            const swiperInstance = document.querySelector('.swiper')?.swiper;
+            if (swiperInstance) {
+              swiperInstance.slideNext();
+            }
+          }
+          break;
+        case 'p':
+          // Go to previous question
+          if (currentIndex > 0) {
+            const swiperInstance = document.querySelector('.swiper')?.swiper;
+            if (swiperInstance) {
+              swiperInstance.slidePrev();
+            }
+          }
+          break;
+        default:
+          break;
+      }
+    }
+  };
+
   return (
     <Box sx={{
       height: '100vh',
       display: 'flex',
       flexDirection: 'column',
       bgcolor: 'background.dark',
-      overflow: 'hidden'
+      overflow: 'hidden',
+      position: 'relative'
     }}>
       {/* Header */}
       <Box sx={{
@@ -317,19 +441,81 @@ const IELTSVocabularyQuery = () => {
         borderColor: 'divider',
         bgcolor: 'background.darkLight',
         height: '64px',
-        flexShrink: 0
+        flexShrink: 0,
+        position: 'relative',
+        zIndex: 10,
+        boxShadow: '0 2px 8px rgba(0,0,0,0.1)'
       }}>
-        <Typography variant="h4" sx={{ color: 'text.light' }}>
-          Khám phá
-        </Typography>
+        <Box sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: 1
+        }}>
+          <Typography variant="h4" sx={{ color: 'text.light' }}>
+            Khám phá
+          </Typography>
+          {practiceExercises && (
+            <Fade in={true}>
+              <Chip
+                label="Practice Mode"
+                size="small"
+                color="primary"
+                sx={{
+                  height: 24,
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  ml: 1,
+                  animation: 'pulse 1.5s infinite',
+                  '@keyframes pulse': {
+                    '0%': {
+                      boxShadow: '0 0 0 0 rgba(25, 118, 210, 0.4)'
+                    },
+                    '70%': {
+                      boxShadow: '0 0 0 6px rgba(25, 118, 210, 0)'
+                    },
+                    '100%': {
+                      boxShadow: '0 0 0 0 rgba(25, 118, 210, 0)'
+                    }
+                  }
+                }}
+              />
+            </Fade>
+          )}
+        </Box>
         <Box sx={{ display: 'flex', gap: 1 }}>
           <Tooltip title="Exercise History">
-            <IconButton onClick={handleLoadHistory} sx={{ color: 'text.light' }}>
+            <IconButton onClick={handleLoadHistory} sx={{
+              color: 'text.light',
+              transition: 'all 0.2s ease',
+              '&:hover': {
+                color: 'primary.main',
+                transform: 'scale(1.1)'
+              }
+            }}>
               <HistoryIcon />
             </IconButton>
           </Tooltip>
+          <Tooltip title="Refresh">
+            <IconButton onClick={handleRefresh} sx={{
+              color: 'text.light',
+              transition: 'all 0.2s ease',
+              '&:hover': {
+                color: 'primary.main',
+                transform: 'scale(1.1) rotate(45deg)'
+              }
+            }}>
+              <RefreshIcon />
+            </IconButton>
+          </Tooltip>
           <Tooltip title="Clear">
-            <IconButton onClick={handleClear} sx={{ color: 'text.light' }}>
+            <IconButton onClick={handleClear} sx={{
+              color: 'text.light',
+              transition: 'all 0.2s ease',
+              '&:hover': {
+                color: 'primary.main',
+                transform: 'scale(1.1)'
+              }
+            }}>
               <CloseIcon />
             </IconButton>
           </Tooltip>
@@ -337,20 +523,21 @@ const IELTSVocabularyQuery = () => {
       </Box>
 
       {/* Main Content */}
-      <Grid container sx={{ 
+      <Grid container sx={{
         flexGrow: 1,
         overflow: 'hidden',
         height: 'calc(100vh - 64px)'
       }}>
-        {/* Chat Section (60%) */}
-        <Grid item xs={12} md={7.2} sx={{ 
-          height: '100%', 
-          display: 'flex', 
+        {/* Chat Section (60% on desktop, 100% on mobile) */}
+        <Grid item xs={12} md={7.2} sx={{
+          height: { xs: 'calc(50vh - 32px)', md: '100%' },
+          display: 'flex',
           flexDirection: 'column',
-          borderRight: '1px solid',
+          borderRight: { xs: 'none', md: '1px solid' },
+          borderBottom: { xs: '1px solid', md: 'none' },
           borderColor: 'divider',
           minWidth: 0, // Prevent flex item from overflowing
-          flex: '0 0 60%' // Fixed width of 60%
+          flex: { xs: 'none', md: '0 0 60%' } // Fixed width of 60% on desktop
         }}>
           {/* Chat Messages */}
           <Box sx={{
@@ -538,8 +725,8 @@ const IELTSVocabularyQuery = () => {
           </Box>
 
           {/* Input Form */}
-          <Box sx={{ 
-            p: 2, 
+          <Box sx={{
+            p: 2,
             bgcolor: 'background.darkLight',
             borderTop: '1px solid',
             borderColor: 'divider',
@@ -632,14 +819,14 @@ const IELTSVocabularyQuery = () => {
           </Box>
         </Grid>
 
-        {/* Practice Section (40%) */}
-        <Grid item xs={12} md={4.8} sx={{ 
-          height: '100%', 
+        {/* Practice Section (40% on desktop, 100% on mobile) */}
+        <Grid item xs={12} md={4.8} sx={{
+          height: { xs: 'calc(50vh - 32px)', md: '100%' },
           display: 'flex',
           flexDirection: 'column',
           bgcolor: 'background.darkLight',
           minWidth: 0, // Prevent flex item from overflowing
-          flex: '0 0 40%' // Fixed width of 40%
+          flex: { xs: 'none', md: '0 0 40%' } // Fixed width of 40% on desktop
         }}>
           {/* Practice Header */}
           <Box sx={{
@@ -648,12 +835,121 @@ const IELTSVocabularyQuery = () => {
             borderColor: 'divider',
             flexShrink: 0
           }}>
-            <Typography variant="h6" sx={{ color: 'text.light', mb: 1 }}>
-              Practice Exercises
-            </Typography>
-            <Tabs value={activeTab} onChange={handleTabChange} sx={{ mb: 2 }}>
-              <Tab label="Fill in Blank" />
-              <Tab label="Story Gap" />
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+              <Typography variant="h6" sx={{ color: 'text.light' }}>
+                Practice Exercises
+              </Typography>
+
+              {/* Progress indicator */}
+              {exerciseResults && activeTab === 0 && (
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Box sx={{
+                    fontWeight: 'bold',
+                    fontSize: '0.875rem',
+                    color: exerciseResults.score > 50 ? 'success.main' : 'text.light'
+                  }}>
+                    {Math.round((exerciseResults.results.fill_in_blank.length / practiceExercises.fill_in_blank.length) * 100)}%
+                  </Box>
+                  <Box sx={{
+                    width: 100,
+                    height: 8,
+                    bgcolor: 'background.dark',
+                    borderRadius: 4,
+                    overflow: 'hidden',
+                    border: '1px solid',
+                    borderColor: 'divider'
+                  }}>
+                    <Box sx={{
+                      height: '100%',
+                      width: `${(exerciseResults.results.fill_in_blank.length / practiceExercises.fill_in_blank.length) * 100}%`,
+                      bgcolor: exerciseResults.score > 50 ? 'success.main' : 'primary.main',
+                      borderRadius: 4,
+                      transition: 'width 0.5s ease'
+                    }} />
+                  </Box>
+                </Box>
+              )}
+            </Box>
+            <Tabs
+              value={activeTab}
+              onChange={handleTabChange}
+              sx={{
+                mb: 2,
+                '& .MuiTabs-indicator': {
+                  height: 3,
+                  borderRadius: '3px 3px 0 0'
+                },
+                '& .MuiTab-root': {
+                  minHeight: 48,
+                  fontWeight: 600,
+                  transition: 'all 0.2s ease',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    bottom: 0,
+                    left: 0,
+                    width: '100%',
+                    height: 0,
+                    bgcolor: 'primary.main',
+                    transition: 'all 0.3s ease',
+                    opacity: 0
+                  },
+                  '&.Mui-selected': {
+                    color: 'primary.main',
+                    '&::after': {
+                      opacity: 0.1,
+                      height: '100%'
+                    }
+                  },
+                  '&:hover:not(.Mui-selected)': {
+                    color: 'primary.light',
+                    bgcolor: 'rgba(25, 118, 210, 0.04)'
+                  }
+                }
+              }}
+            >
+              <Tab
+                label={
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <span>Fill in Blank</span>
+                    {practiceExercises?.fill_in_blank && (
+                      <Chip
+                        size="small"
+                        label={practiceExercises.fill_in_blank.length}
+                        sx={{
+                          height: 20,
+                          fontSize: '0.7rem',
+                          bgcolor: 'rgba(25, 118, 210, 0.1)',
+                          color: 'primary.main',
+                          fontWeight: 'bold'
+                        }}
+                      />
+                    )}
+                  </Box>
+                }
+              />
+              <Tab
+                label={
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    <span>Story Gap</span>
+                    {practiceExercises?.story_gap && (
+                      <Chip
+                        size="small"
+                        label="1"
+                        sx={{
+                          height: 20,
+                          fontSize: '0.7rem',
+                          bgcolor: 'rgba(25, 118, 210, 0.1)',
+                          color: 'primary.main',
+                          fontWeight: 'bold'
+                        }}
+                      />
+                    )}
+                  </Box>
+                }
+              />
             </Tabs>
           </Box>
 
@@ -695,10 +991,19 @@ const IELTSVocabularyQuery = () => {
                         width: 100% !important;
                         display: flex;
                         justify-content: center;
+                        transition: transform 0.3s ease, opacity 0.3s ease;
+                      }
+                      .swiper-slide-active {
+                        transform: scale(1);
+                        opacity: 1;
+                      }
+                      .swiper-slide-prev, .swiper-slide-next {
+                        transform: scale(0.9);
+                        opacity: 0.6;
                       }
                       .swiper-button-prev, .swiper-button-next {
                         color: #1976d2;
-                        background: rgba(0, 0, 0, 0.5);
+                        background: rgba(25, 118, 210, 0.1);
                         border-radius: 50%;
                         width: 40px;
                         height: 40px;
@@ -706,6 +1011,11 @@ const IELTSVocabularyQuery = () => {
                         align-items: center;
                         justify-content: center;
                         transform: translateY(-50%);
+                        transition: all 0.2s ease;
+                      }
+                      .swiper-button-prev:hover, .swiper-button-next:hover {
+                        background: rgba(25, 118, 210, 0.2);
+                        transform: translateY(-50%) scale(1.1);
                       }
                       .swiper-button-prev {
                         left: 10px;
@@ -721,6 +1031,25 @@ const IELTSVocabularyQuery = () => {
                       }
                       .swiper-pagination-bullet {
                         background: #1976d2;
+                        opacity: 0.5;
+                        transition: all 0.2s ease;
+                      }
+                      .swiper-pagination-bullet-active {
+                        background: #1976d2;
+                        opacity: 1;
+                        transform: scale(1.2);
+                      }
+                      .swiper-pagination-bullet-correct {
+                        background: #4caf50 !important;
+                        opacity: 1 !important;
+                      }
+                      .swiper-pagination-bullet-incorrect {
+                        background: #f44336 !important;
+                        opacity: 1 !important;
+                      }
+                      .swiper-pagination-bullet-active.swiper-pagination-bullet-correct,
+                      .swiper-pagination-bullet-active.swiper-pagination-bullet-incorrect {
+                        transform: scale(1.4);
                       }
                       @media (max-width: 600px) {
                         .swiper {
@@ -741,114 +1070,356 @@ const IELTSVocabularyQuery = () => {
                       spaceBetween={20}
                       slidesPerView={1}
                       navigation
-                      pagination={{ clickable: true }}
+                      effect="creative"
+                      creativeEffect={{
+                        prev: {
+                          translate: [0, 0, -400],
+                          opacity: 0,
+                        },
+                        next: {
+                          translate: [0, 0, -400],
+                          opacity: 0,
+                        },
+                      }}
+                      speed={800}
+                      pagination={{
+                        clickable: true,
+                        dynamicBullets: true,
+                        renderBullet: function (index, className) {
+                          const isCompleted = exerciseResults?.results?.fill_in_blank?.[index];
+                          const isCorrect = isCompleted && exerciseResults.results.fill_in_blank[index].is_correct;
+                          const additionalClass = isCompleted
+                            ? (isCorrect ? 'swiper-pagination-bullet-correct' : 'swiper-pagination-bullet-incorrect')
+                            : '';
+                          return `<span class="${className} ${additionalClass}" style="${isCompleted ? 'transform: scale(1.2);' : ''}"></span>`;
+                        }
+                      }}
                       autoHeight={true}
                       style={{ maxWidth: '100%' }}
                     >
                       {practiceExercises?.fill_in_blank?.map((question, index) => (
                         <SwiperSlide key={index}>
-                          <Card
-                            sx={{
-                              bgcolor: 'background.dark',
-                              width: '100%',
-                              maxWidth: 'calc(100% - 20px)',
-                              mx: 'auto',
-                            }}
-                          >
-                            <CardContent>
-                              <Typography
-                                variant="subtitle1"
-                                sx={{ color: 'primary.main', mb: 1, fontWeight: 'bold' }}
-                              >
-                                Question {index + 1}
-                              </Typography>
-                              <Typography
-                                variant="body1"
-                                component="div"
-                                sx={{
-                                  color: 'text.light',
+                          <Fade in={true} timeout={800}>
+                            <Card
+                              sx={{
+                                bgcolor: 'background.dark',
+                                width: '100%',
+                                maxWidth: 'calc(100% - 20px)',
+                                mx: 'auto',
+                                borderRadius: 2,
+                                boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
+                                transition: 'all 0.3s ease',
+                                '&:hover': {
+                                  boxShadow: '0 8px 30px rgba(0,0,0,0.2)',
+                                  transform: 'translateY(-2px)'
+                                },
+                                border: '1px solid',
+                                borderColor: 'divider'
+                              }}
+                            >
+                              <CardContent sx={{ p: { xs: 2, sm: 3 } }}>
+                                <Box sx={{
+                                  display: 'flex',
+                                  justifyContent: 'space-between',
+                                  alignItems: 'center',
                                   mb: 2,
-                                  whiteSpace: 'pre-wrap',
-                                  wordBreak: 'break-word',
-                                  '& strong': { color: 'primary.light' },
-                                }}
-                              >
-                                <MarkdownContent content={question.text} />
-                              </Typography>
-                              {question.options && (
-                                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                                  {question.options.map((option, optIndex) => (
-                                    <Button
-                                      key={optIndex}
-                                      variant={
-                                        userAnswers[`fill_in_blank_${index}`] === option
-                                          ? 'contained'
-                                          : 'outlined'
-                                      }
-                                      fullWidth
-                                      onClick={() =>
-                                        handleAnswerChange('fill_in_blank', index, option)
-                                      }
+                                  pb: 1.5,
+                                  borderBottom: '1px solid',
+                                  borderColor: 'divider'
+                                }}>
+                                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                    <Box
                                       sx={{
-                                        justifyContent: 'flex-start',
-                                        textTransform: 'none',
-                                        color: 'text.light',
-                                        borderColor: 'divider',
-                                        '&:hover': {
-                                          borderColor: 'primary.main',
-                                          bgcolor: 'background.dark',
-                                        },
-                                      }}
-                                    >
-                                      {option}
-                                    </Button>
-                                  ))}
-                                </Box>
-                              )}
-                              {showResults &&
-                                exerciseResults?.results?.fill_in_blank?.[index] && (
-                                  <Box
-                                    sx={{
-                                      mt: 2,
-                                      p: 1,
-                                      bgcolor: 'background.darkLight',
-                                      borderRadius: 1,
-                                    }}
-                                  >
-                                    <Typography
-                                      variant="body2"
-                                      sx={{
-                                        color:
-                                          exerciseResults.results.fill_in_blank[index]
-                                            .is_correct
-                                            ? 'success.main'
-                                            : 'error.main',
+                                        width: 28,
+                                        height: 28,
+                                        borderRadius: '50%',
+                                        bgcolor: 'primary.main',
                                         display: 'flex',
+                                        justifyContent: 'center',
                                         alignItems: 'center',
-                                        gap: 1,
+                                        color: 'white',
+                                        fontWeight: 'bold',
+                                        fontSize: '0.875rem'
                                       }}
                                     >
-                                      <CheckCircleIcon fontSize="small" />
-                                      {exerciseResults.results.fill_in_blank[index].is_correct
-                                        ? 'Correct!'
-                                        : `Incorrect. The correct answer is: ${exerciseResults.results.fill_in_blank[index]
-                                          .correct_answer
-                                        }`}
-                                    </Typography>
+                                      {index + 1}
+                                    </Box>
                                     <Typography
-                                      variant="body2"
-                                      sx={{
-                                        color: 'text.light',
-                                        mt: 1,
-                                        fontStyle: 'italic',
-                                      }}
+                                      variant="subtitle1"
+                                      sx={{ color: 'primary.main', fontWeight: 'bold' }}
                                     >
-                                      {exerciseResults.results.fill_in_blank[index].explanation}
+                                      Câu hỏi
                                     </Typography>
                                   </Box>
+                                  {exerciseResults?.results?.fill_in_blank?.[index] && (
+                                    <Chip
+                                      size="small"
+                                      icon={exerciseResults.results.fill_in_blank[index].is_correct ?
+                                        <CheckCircleIcon fontSize="small" /> :
+                                        <CloseIcon fontSize="small" />}
+                                      label={exerciseResults.results.fill_in_blank[index].is_correct ? "Đúng" : "Sai"}
+                                      sx={{
+                                        bgcolor: exerciseResults.results.fill_in_blank[index].is_correct ?
+                                          'success.main' : 'error.main',
+                                        color: '#fff',
+                                        fontWeight: 600,
+                                        fontSize: '0.8rem',
+                                        py: 0.5,
+                                        borderRadius: '12px',
+                                        '& .MuiChip-label': {
+                                          px: 1
+                                        }
+                                      }}
+                                    />
+                                  )}
+                                </Box>
+                                <Typography
+                                  variant="body1"
+                                  component="div"
+                                  sx={{
+                                    color: 'text.light',
+                                    mb: 3,
+                                    whiteSpace: 'pre-wrap',
+                                    wordBreak: 'break-word',
+                                    '& strong': {
+                                      color: 'primary.main',
+                                      fontWeight: 700,
+                                      px: 0.5,
+                                      py: 0.2,
+                                      bgcolor: 'rgba(25, 118, 210, 0.08)',
+                                      borderRadius: 0.5
+                                    },
+                                    fontSize: { xs: '0.95rem', sm: '1rem' },
+                                    lineHeight: 1.7,
+                                    letterSpacing: '0.01em'
+                                  }}
+                                >
+                                  <MarkdownContent content={question.text} />
+                                </Typography>
+                                {question.options && (
+                                  <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
+                                    {question.options.map((option, optIndex) => {
+                                      // Kiểm tra xem câu này đã có kết quả chưa 
+                                      const hasResult = exerciseResults?.results?.fill_in_blank?.[index];
+                                      // Kiểm tra xem người dùng đã chọn option này chưa
+                                      const isSelected = userAnswers[`fill_in_blank_${index}`] === option;
+                                      // Kiểm tra xem option này có phải là câu trả lời đúng không
+                                      const isCorrectAnswer = option === question.correct_answer;
+                                      // Kiểm tra xem người dùng đã chọn đúng chưa
+                                      const isAnsweredCorrectly = hasResult && isSelected && isCorrectAnswer;
+                                      // Kiểm tra xem người dùng đã chọn sai chưa
+                                      const isAnsweredIncorrectly = hasResult && isSelected && !isCorrectAnswer;
+                                      // Kiểm tra xem đây có phải là đáp án đúng và người dùng đã chọn một đáp án sai khác
+                                      const isCorrectUnselected = hasResult && !isSelected && isCorrectAnswer &&
+                                        userAnswers[`fill_in_blank_${index}`];
+
+                                      // Vô hiệu hóa các option khác sau khi người dùng đã chọn một câu trả lời
+                                      const isDisabled = hasResult && !isSelected;
+
+                                      return (
+                                        <Button
+                                          key={optIndex}
+                                          variant={isSelected ? 'contained' : 'outlined'}
+                                          fullWidth
+                                          disabled={isDisabled}
+                                          onClick={() => handleAnswerChange('fill_in_blank', index, option)}
+                                          onKeyDown={(e) => handleKeyDown(e, 'fill_in_blank', index, optIndex)}
+                                          id={`option-${index}-${optIndex}`}
+                                          startIcon={
+                                            isAnsweredCorrectly ? <CheckCircleIcon /> :
+                                              isAnsweredIncorrectly ? <CloseIcon /> :
+                                                isCorrectUnselected ? <CheckCircleIcon /> : null
+                                          }
+                                          sx={{
+                                            justifyContent: 'flex-start',
+                                            textTransform: 'none',
+                                            position: 'relative',
+                                            p: 1.5,
+                                            transition: 'all 0.3s ease',
+                                            fontWeight: isSelected || isCorrectUnselected ? 500 : 400,
+                                            outline: 'none',
+                                            '&:focus-visible': {
+                                              boxShadow: '0 0 0 3px rgba(25, 118, 210, 0.4)',
+                                              transform: 'translateY(-2px)',
+                                              zIndex: 1
+                                            },
+
+                                            // Styling based on answer status
+                                            ...(isAnsweredCorrectly && {
+                                              color: 'white',
+                                              backgroundColor: 'success.main',
+                                              borderColor: 'success.main',
+                                              '&:hover': {
+                                                backgroundColor: 'success.dark',
+                                                borderColor: 'success.dark',
+                                              },
+                                            }),
+
+                                            ...(isAnsweredIncorrectly && {
+                                              color: 'white',
+                                              backgroundColor: 'error.main',
+                                              borderColor: 'error.main',
+                                              '&:hover': {
+                                                backgroundColor: 'error.dark',
+                                                borderColor: 'error.dark',
+                                              },
+                                            }),
+
+                                            ...(isCorrectUnselected && {
+                                              color: 'success.main',
+                                              borderColor: 'success.main',
+                                              borderWidth: 2,
+                                              backgroundColor: 'rgba(76, 175, 80, 0.08)',
+                                              '&:hover': {
+                                                borderColor: 'success.main',
+                                                backgroundColor: 'rgba(76, 175, 80, 0.12)',
+                                              },
+                                            }),
+
+                                            ...(!isAnsweredCorrectly && !isAnsweredIncorrectly && !isCorrectUnselected && {
+                                              color: 'text.light',
+                                              borderColor: 'divider',
+                                              '&:hover': {
+                                                borderColor: 'primary.main',
+                                                backgroundColor: 'rgba(25, 118, 210, 0.04)',
+                                              },
+                                            }),
+                                          }}
+                                        >
+                                          {option}
+
+                                          {/* Thêm badge cho đáp án đúng/sai */}
+                                          {(isAnsweredCorrectly || isAnsweredIncorrectly || isCorrectUnselected) && (
+                                            <Box
+                                              sx={{
+                                                position: 'absolute',
+                                                right: 8,
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                gap: 0.5,
+                                                color: isAnsweredCorrectly ? 'white' :
+                                                  isAnsweredIncorrectly ? 'white' :
+                                                    'success.main',
+                                                fontWeight: 500,
+                                                fontSize: '0.8rem',
+                                              }}
+                                            >
+                                              {isAnsweredCorrectly && 'Đúng'}
+                                              {isAnsweredIncorrectly && 'Sai'}
+                                              {isCorrectUnselected && 'Đáp án đúng'}
+                                            </Box>
+                                          )}
+                                        </Button>
+                                      );
+                                    })}
+                                  </Box>
                                 )}
-                            </CardContent>
-                          </Card>
+                                {exerciseResults?.results?.fill_in_blank?.[index] && (
+                                  <Collapse in={true} timeout={700}>
+                                    <Box
+                                      sx={{
+                                        mt: 3,
+                                        p: 2.5,
+                                        bgcolor: exerciseResults.results.fill_in_blank[index].is_correct ?
+                                          'rgba(46, 125, 50, 0.08)' : 'rgba(211, 47, 47, 0.08)',
+                                        border: '1px solid',
+                                        borderColor: exerciseResults.results.fill_in_blank[index].is_correct ?
+                                          'success.main' : 'error.main',
+                                        borderRadius: 2,
+                                        boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                                        position: 'relative',
+                                        overflow: 'hidden',
+                                        '&::before': {
+                                          content: '""',
+                                          position: 'absolute',
+                                          top: 0,
+                                          left: 0,
+                                          width: '4px',
+                                          height: '100%',
+                                          backgroundColor: exerciseResults.results.fill_in_blank[index].is_correct ?
+                                            'success.main' : 'error.main'
+                                        }
+                                      }}
+                                    >
+                                      <Typography
+                                        variant="subtitle2"
+                                        sx={{
+                                          mb: 1.5,
+                                          color: exerciseResults.results.fill_in_blank[index].is_correct ?
+                                            'success.main' : 'error.main',
+                                          display: 'flex',
+                                          alignItems: 'center',
+                                          gap: 1,
+                                          fontWeight: 600
+                                        }}
+                                      >
+                                        {exerciseResults.results.fill_in_blank[index].is_correct ?
+                                          <CheckCircleIcon fontSize="small" /> :
+                                          <CloseIcon fontSize="small" />}
+                                        {exerciseResults.results.fill_in_blank[index].is_correct ? 'Đáp án chính xác!' : 'Đáp án chưa chính xác'}
+                                      </Typography>
+
+                                      {!exerciseResults.results.fill_in_blank[index].is_correct && (
+                                        <Box
+                                          sx={{
+                                            p: 1.5,
+                                            borderRadius: 1,
+                                            mb: 1.5,
+                                            bgcolor: 'background.dark',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: 1,
+                                            border: '1px dashed',
+                                            borderColor: 'success.main'
+                                          }}
+                                        >
+                                          <CheckCircleIcon sx={{ color: 'success.main' }} fontSize="small" />
+                                          <Typography
+                                            variant="body2"
+                                            sx={{
+                                              color: 'success.main',
+                                              fontWeight: 500
+                                            }}
+                                          >
+                                            Đáp án đúng: <strong>{exerciseResults.results.fill_in_blank[index].correct_answer}</strong>
+                                          </Typography>
+                                        </Box>
+                                      )}
+
+                                      {exerciseResults.results.fill_in_blank[index].explanation && (
+                                        <Box>
+                                          <Typography
+                                            variant="caption"
+                                            sx={{
+                                              color: 'text.secondary',
+                                              textTransform: 'uppercase',
+                                              letterSpacing: '0.1em',
+                                              fontWeight: 500,
+                                            }}
+                                          >
+                                            Giải thích
+                                          </Typography>
+                                          <Typography
+                                            variant="body2"
+                                            sx={{
+                                              color: 'text.light',
+                                              mt: 0.5,
+                                              lineHeight: 1.6,
+                                              pl: 1,
+                                              borderLeft: '2px solid',
+                                              borderColor: 'divider'
+                                            }}
+                                          >
+                                            {exerciseResults.results.fill_in_blank[index].explanation}
+                                          </Typography>
+                                        </Box>
+                                      )}
+                                    </Box>
+                                  </Collapse>
+                                )}
+                              </CardContent>
+                            </Card>
+                          </Fade>
                         </SwiperSlide>
                       ))}
                     </Swiper>
@@ -883,22 +1454,64 @@ const IELTSVocabularyQuery = () => {
                           },
                         }}
                       >
-                        <Typography variant="h6" sx={{ color: 'primary.main', mb: 2 }}>
+                        <Typography variant="h6" sx={{
+                          color: 'primary.main',
+                          mb: 2,
+                          pb: 1,
+                          borderBottom: '1px solid',
+                          borderColor: 'divider',
+                          fontWeight: 'bold',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1
+                        }}>
                           {practiceExercises?.story_gap?.title || 'Story Gap Exercise'}
                         </Typography>
                         {practiceExercises?.story_gap?.instructions && (
-                          <Typography
-                            variant="body2"
+                          <Box
                             sx={{
-                              color: 'text.light',
                               mb: 3,
-                              p: 1,
-                              bgcolor: 'background.darkLight',
-                              borderRadius: 1,
+                              p: 2,
+                              bgcolor: 'rgba(25, 118, 210, 0.08)',
+                              borderRadius: 2,
+                              border: '1px solid',
+                              borderColor: 'primary.main',
+                              position: 'relative',
+                              '&::before': {
+                                content: '""',
+                                position: 'absolute',
+                                top: 0,
+                                left: 0,
+                                width: '4px',
+                                height: '100%',
+                                bgcolor: 'primary.main'
+                              }
                             }}
                           >
-                            {practiceExercises.story_gap.instructions}
-                          </Typography>
+                            <Typography
+                              variant="subtitle2"
+                              sx={{
+                                color: 'primary.main',
+                                mb: 1,
+                                fontWeight: 600,
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 0.5
+                              }}
+                            >
+                              <InfoIcon fontSize="small" />
+                              Hướng dẫn
+                            </Typography>
+                            <Typography
+                              variant="body2"
+                              sx={{
+                                color: 'text.light',
+                                lineHeight: 1.6
+                              }}
+                            >
+                              {practiceExercises.story_gap.instructions}
+                            </Typography>
+                          </Box>
                         )}
                         <Typography
                           variant="body1"
@@ -909,7 +1522,21 @@ const IELTSVocabularyQuery = () => {
                             whiteSpace: 'pre-wrap',
                             lineHeight: 1.8,
                             wordBreak: 'break-word',
-                            '& strong': { color: 'primary.light' },
+                            '& strong': {
+                              color: 'primary.main',
+                              fontWeight: 700,
+                              px: 0.5,
+                              py: 0.2,
+                              bgcolor: 'rgba(25, 118, 210, 0.08)',
+                              borderRadius: 0.5
+                            },
+                            fontSize: { xs: '0.95rem', sm: '1rem' },
+                            letterSpacing: '0.01em',
+                            p: 2,
+                            bgcolor: 'rgba(255, 255, 255, 0.03)',
+                            borderRadius: 2,
+                            border: '1px solid',
+                            borderColor: 'divider'
                           }}
                         >
                           <div>
@@ -919,59 +1546,167 @@ const IELTSVocabularyQuery = () => {
                         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                           {practiceExercises?.story_gap?.gaps?.map((gap, index) => (
                             <Box key={index}>
-                              <TextField
-                                label={`Word ${index + 1}`}
-                                variant="outlined"
-                                size="small"
-                                fullWidth
-                                value={userAnswers[`story_gap_${index}`] || ''}
-                                onChange={(e) =>
-                                  handleAnswerChange('story_gap', index, e.target.value)
-                                }
-                                sx={{
-                                  '& .MuiOutlinedInput-root': {
-                                    color: 'text.light',
-                                    '& fieldset': { borderColor: 'divider' },
-                                    '&:hover fieldset': { borderColor: 'primary.main' },
-                                    '&.Mui-focused fieldset': { borderColor: 'primary.main' },
-                                  },
-                                  '& .MuiInputLabel-root': { color: 'text.light' },
-                                }}
-                              />
-                              {practiceExercises?.story_gap?.hints?.[index] && (
-                                <Typography
-                                  variant="caption"
+                              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                                <Box
                                   sx={{
-                                    color: 'text.light',
-                                    display: 'block',
-                                    mt: 0.5,
-                                    ml: 1,
+                                    minWidth: 24,
+                                    height: 24,
+                                    borderRadius: '50%',
+                                    bgcolor: 'primary.main',
+                                    display: 'flex',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                    color: 'white',
+                                    fontWeight: 'bold',
+                                    fontSize: '0.75rem',
+                                    flexShrink: 0
                                   }}
                                 >
-                                  Hint: {practiceExercises.story_gap.hints[index]}
-                                </Typography>
-                              )}
-                              {showResults &&
-                                exerciseResults?.results?.story_gap?.[index] && (
+                                  {index + 1}
+                                </Box>
+                                <TextField
+                                  label={`Từ cần điền`}
+                                  variant="outlined"
+                                  size="small"
+                                  fullWidth
+                                  value={userAnswers[`story_gap_${index}`] || ''}
+                                  onChange={(e) =>
+                                    handleAnswerChange('story_gap', index, e.target.value)
+                                  }
+                                  sx={{
+                                    '& .MuiOutlinedInput-root': {
+                                      color: 'text.light',
+                                      '& fieldset': {
+                                        borderColor: 'divider',
+                                        borderWidth: showResults && exerciseResults?.results?.story_gap?.[index] ? 2 : 1
+                                      },
+                                      '&:hover fieldset': {
+                                        borderColor: showResults && exerciseResults?.results?.story_gap?.[index] ?
+                                          (exerciseResults.results.story_gap[index].is_correct ? 'success.main' : 'error.main') :
+                                          'primary.main'
+                                      },
+                                      '&.Mui-focused fieldset': {
+                                        borderColor: showResults && exerciseResults?.results?.story_gap?.[index] ?
+                                          (exerciseResults.results.story_gap[index].is_correct ? 'success.main' : 'error.main') :
+                                          'primary.main'
+                                      },
+                                      ...((showResults && exerciseResults?.results?.story_gap?.[index]) && {
+                                        borderColor: exerciseResults.results.story_gap[index].is_correct ? 'success.main' : 'error.main',
+                                        bgcolor: exerciseResults.results.story_gap[index].is_correct ? 'rgba(76, 175, 80, 0.04)' : 'rgba(211, 47, 47, 0.04)'
+                                      })
+                                    },
+                                    '& .MuiInputLabel-root': {
+                                      color: (showResults && exerciseResults?.results?.story_gap?.[index]) ?
+                                        (exerciseResults.results.story_gap[index].is_correct ? 'success.main' : 'error.main') :
+                                        'text.light'
+                                    },
+                                  }}
+                                />
+                                {showResults && exerciseResults?.results?.story_gap?.[index] && (
+                                  <Box
+                                    sx={{
+                                      ml: 1,
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      color: exerciseResults.results.story_gap[index].is_correct ? 'success.main' : 'error.main',
+                                    }}
+                                  >
+                                    {exerciseResults.results.story_gap[index].is_correct ?
+                                      <CheckCircleIcon /> : <CloseIcon />}
+                                  </Box>
+                                )}
+                              </Box>
+                              {practiceExercises?.story_gap?.hints?.[index] && (
+                                <Box
+                                  sx={{
+                                    mt: 1,
+                                    mb: 2,
+                                    ml: 4,
+                                    display: 'flex',
+                                    alignItems: 'flex-start',
+                                    gap: 0.5
+                                  }}
+                                >
+                                  <Box component="span" sx={{ color: 'primary.light', fontWeight: 600, fontSize: '0.75rem' }}>Gợi ý:</Box>
                                   <Typography
                                     variant="caption"
                                     sx={{
-                                      color:
-                                        exerciseResults.results.story_gap[index].is_correct
-                                          ? 'success.main'
-                                          : 'error.main',
-                                      display: 'block',
-                                      mt: 0.5,
-                                      ml: 1,
+                                      color: 'text.light',
+                                      fontStyle: 'italic',
+                                      lineHeight: 1.4,
+                                      display: 'block'
                                     }}
                                   >
-                                    {exerciseResults.results.story_gap[index].is_correct
-                                      ? 'Correct!'
-                                      : `Incorrect. The correct answer is: ${exerciseResults.results.story_gap[index]
-                                        .correct_answer
-                                      }`}
+                                    {practiceExercises.story_gap.hints[index]}
                                   </Typography>
-                                )}
+                                </Box>
+                              )}
+                              {showResults && exerciseResults?.results?.story_gap?.[index] && (
+                                <Box
+                                  sx={{
+                                    mt: 1,
+                                    mb: 2,
+                                    ml: 4,
+                                    p: 1.5,
+                                    bgcolor: exerciseResults.results.story_gap[index].is_correct ?
+                                      'rgba(76, 175, 80, 0.08)' : 'rgba(211, 47, 47, 0.08)',
+                                    borderRadius: 1,
+                                    borderLeft: '3px solid',
+                                    borderColor: exerciseResults.results.story_gap[index].is_correct ?
+                                      'success.main' : 'error.main'
+                                  }}
+                                >
+                                  <Typography
+                                    variant="body2"
+                                    sx={{
+                                      color: exerciseResults.results.story_gap[index].is_correct ?
+                                        'success.main' : 'error.main',
+                                      fontWeight: 500,
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      gap: 0.5
+                                    }}
+                                  >
+                                    {exerciseResults.results.story_gap[index].is_correct ? (
+                                      <>
+                                        <CheckCircleIcon fontSize="small" /> Chính xác!
+                                      </>
+                                    ) : (
+                                      <>
+                                        <CloseIcon fontSize="small" /> Chưa chính xác
+                                      </>
+                                    )}
+                                  </Typography>
+
+                                  {!exerciseResults.results.story_gap[index].is_correct && (
+                                    <Typography
+                                      variant="body2"
+                                      sx={{
+                                        mt: 1,
+                                        color: 'text.light',
+                                        display: 'flex',
+                                        flexWrap: 'wrap',
+                                        gap: 0.5
+                                      }}
+                                    >
+                                      <Box component="span" sx={{ fontWeight: 600 }}>Đáp án đúng:</Box>
+                                      <Box
+                                        component="span"
+                                        sx={{
+                                          color: 'success.main',
+                                          fontWeight: 600,
+                                          bgcolor: 'rgba(76, 175, 80, 0.1)',
+                                          px: 1,
+                                          py: 0.2,
+                                          borderRadius: 0.5
+                                        }}
+                                      >
+                                        {exerciseResults.results.story_gap[index].correct_answer}
+                                      </Box>
+                                    </Typography>
+                                  )}
+                                </Box>
+                              )}
                             </Box>
                           ))}
                         </Box>
@@ -981,31 +1716,122 @@ const IELTSVocabularyQuery = () => {
                       variant="contained"
                       onClick={handleCheckAnswers}
                       disabled={showResults}
+                      startIcon={!showResults && <CheckCircleIcon />}
+                      size="large"
                       sx={{
-                        mt: 2,
+                        mt: 3,
+                        mb: 2,
+                        py: 1.2,
+                        fontWeight: 600,
                         bgcolor: 'primary.main',
                         '&:hover': { bgcolor: 'primary.dark' },
+                        boxShadow: '0 4px 10px rgba(0, 0, 0, 0.15)',
+                        transition: 'all 0.2s ease',
+                        '&:hover': {
+                          transform: 'translateY(-2px)',
+                          bgcolor: 'primary.dark',
+                          boxShadow: '0 6px 12px rgba(0, 0, 0, 0.2)'
+                        }
                       }}
                     >
-                      Check Answers
+                      Kiểm tra đáp án
                     </Button>
                     {showResults && exerciseResults && (
                       <Box
-                        sx={{ mt: 2, p: 2, bgcolor: 'background.dark', borderRadius: 1 }}
+                        sx={{
+                          mt: 3,
+                          p: 3,
+                          bgcolor: 'background.dark',
+                          borderRadius: 2,
+                          border: '1px solid',
+                          borderColor: exerciseResults.score > 50 ? 'success.main' : 'error.main',
+                          boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                          position: 'relative',
+                          '&::before': {
+                            content: '""',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '4px',
+                            height: '100%',
+                            bgcolor: exerciseResults.score > 50 ? 'success.main' : 'error.main'
+                          }
+                        }}
                       >
-                        <Typography variant="h6" sx={{ color: 'primary.main', mb: 1 }}>
-                          Results
+                        <Typography variant="h6" sx={{
+                          color: exerciseResults.score > 50 ? 'success.main' : 'error.main',
+                          mb: 2,
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1,
+                          fontWeight: 600
+                        }}>
+                          {exerciseResults.score > 50 ? <CheckCircleIcon /> : <InfoIcon />}
+                          Kết quả
                         </Typography>
-                        <Typography variant="body1" sx={{ color: 'text.light' }}>
-                          Score: {exerciseResults.score.toFixed(1)}%
-                        </Typography>
-                        <Typography
-                          variant="body2"
-                          sx={{ color: 'text.light', mt: 1 }}
-                        >
-                          Correct Answers: {exerciseResults.correct_answers} /{' '}
-                          {exerciseResults.total_questions}
-                        </Typography>
+                        <Box sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          mb: 2,
+                          pb: 2,
+                          borderBottom: '1px solid',
+                          borderColor: 'divider'
+                        }}>
+                          <Typography variant="body1" sx={{
+                            color: 'text.light',
+                            fontWeight: 500,
+                            fontSize: '1.1rem'
+                          }}>
+                            Điểm số:
+                          </Typography>
+                          <Box sx={{
+                            px: 2,
+                            py: 1,
+                            bgcolor: exerciseResults.score > 50 ? 'rgba(76, 175, 80, 0.1)' : 'rgba(211, 47, 47, 0.1)',
+                            borderRadius: 2,
+                            fontWeight: 700,
+                            color: exerciseResults.score > 50 ? 'success.main' : 'error.main',
+                            fontSize: '1.2rem'
+                          }}>
+                            {exerciseResults.score.toFixed(1)}%
+                          </Box>
+                        </Box>
+                        <Box sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 2
+                        }}>
+                          <Box sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            p: 1,
+                            flexGrow: 1
+                          }}>
+                            <Typography variant="caption" sx={{ color: 'text.light', mb: 0.5 }}>
+                              Số câu đúng
+                            </Typography>
+                            <Typography variant="h6" sx={{ color: 'success.main', fontWeight: 600 }}>
+                              {exerciseResults.correct_answers}
+                            </Typography>
+                          </Box>
+                          <Divider orientation="vertical" flexItem />
+                          <Box sx={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            p: 1,
+                            flexGrow: 1
+                          }}>
+                            <Typography variant="caption" sx={{ color: 'text.light', mb: 0.5 }}>
+                              Tổng số câu
+                            </Typography>
+                            <Typography variant="h6" sx={{ color: 'primary.main', fontWeight: 600 }}>
+                              {exerciseResults.total_questions}
+                            </Typography>
+                          </Box>
+                        </Box>
                       </Box>
                     )}
                   </Box>
@@ -1202,4 +2028,4 @@ const IELTSVocabularyQuery = () => {
   );
 };
 
-export default IELTSVocabularyQuery; 
+export default IELTSVocabularyQuery;
