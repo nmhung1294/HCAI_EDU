@@ -156,7 +156,8 @@ def generate_fill_in_blank_question(word: str) -> dict:
 
     # Generate question with definition and example
     question = {
-        "text": f"Word: {word}\nDefinition: {context['definition']}\n\nComplete the sentence:\n{random.choice(context['examples'])}",
+        # "text": f"Word: {word}\nDefinition: {context['definition']}\n\nComplete the sentence:\n{random.choice(context['examples'])}",
+        "text": f"Complete the sentence:\n{random.choice(context['examples'])}",
         "options": [word, f"not_{word}", f"anti_{word}", f"pre_{word}"],
         "correct_answer": word,
         "explanation": f"The word '{word}' means {context['definition']}. In this context, it is the most appropriate choice to complete the sentence."
