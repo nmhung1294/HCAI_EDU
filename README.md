@@ -36,7 +36,7 @@ source hcai_edu/bin/activate
 ```
 - **Windows** 🪟:
 ```bash
-python3 -m venv hcai_edu
+python -m venv hcai_edu
 hcai_edu\Scripts\activate.bat
 ```
 
